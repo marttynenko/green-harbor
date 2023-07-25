@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- <meta name="viewport" content="width=1024"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Зеленая гавань</title>
+  <meta name="keywords" content="Зеленая гавань" />
+  <meta name="description" content="Зеленая гавань" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no" />
+
+  <style>
+    .preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 99;
+      width: 100%;
+      height: 100%;
+      background-color: #1E1E1E;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 35px 50px;
+      transition: opacity 1.5s, visibility 1.5s, transform 1.5s;
+      transform: translate3d(0,0,0);
+    }
+    .preloader-logo {
+      position: relative;
+      width: 354px;
+      max-width: 100%;
+    }
+    .preloader-logo svg {
+      display: block;
+      width: 100%;
+    }
+    .preloader-logo-shadow {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      top: 0;
+      height: 100%;
+      background-color: #1E1E1E;
+      animation: prAnim 2s infinite linear;
+      transition: .5s height;
+    }
+    @keyframes prAnim {
+      100% {
+        height: 0%;
+      }
+    }
+    .is-loaded .preloader {
+      opacity: 0;
+      visibility: hidden;
+      transform: scale(1.07);
+    }
+    .is-loaded .preloader-logo-shadow {
+      animation: none;
+      display: none;
+    }
+  </style>
+  <style>
+    @font-face {
+      font-family: 'CoFo Sans';
+      src: url('./fonts/cofo/CoFoSans-Bold.eot');
+      src: local('CoFo Sans Bold'), local('CoFoSans-Bold'),
+        url('./fonts/cofo/CoFoSans-Bold.woff2') format('woff2'),
+        url('./fonts/cofo/CoFoSans-Bold.woff') format('woff'),
+        url('./fonts/cofo/CoFoSans-Bold.ttf') format('truetype');
+      font-weight: bold;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'CoFo Sans';
+      src: url('./fonts/cofo/CoFoSans-Regular.eot');
+      src: local('CoFo Sans'), local('CoFoSans-Regular'),
+        url('./fonts/cofo/CoFoSans-Regular.woff2') format('woff2'),
+        url('./fonts/cofo/CoFoSans-Regular.woff') format('woff'),
+        url('./fonts/cofo/CoFoSans-Regular.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'CoFo Sans';
+      src: url('CoFoRobert-RegularItalic.eot');
+      src: local('CoFo Sans'), local('CoFo Sans Italic'),
+        url('CoFoRobert-RegularItalic.woff2') format('woff2'),
+        url('CoFoRobert-RegularItalic.woff') format('woff'),
+        url('CoFoRobert-RegularItalic.ttf') format('truetype');
+      font-weight: normal;
+      font-style: italic;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Lack';
+      src: local('Lack Italic'), local('Lack-Italic'), url('./fonts/lack/Lackitalic.woff2') format('woff2'), url('./fonts/lack/Lackitalic.woff') format('woff'), url('./fonts/lack/Lackitalic.ttf') format('truetype');
+      font-weight: 400;
+      font-style: italic;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Lack';
+      src: local('Lack Regular'), local('Lack-Regular'), url('./fonts/lack/Lackregular.woff2') format('woff2'), url('./fonts/lack/Lackregular.woff') format('woff'), url('./fonts/lack/Lackregular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+  </style>
+  
+  <link rel="stylesheet" href="./css/style.css" type="text/css" media="all" />
+
+  <link rel="icon" href="./images/favicon.svg" type="image/svg+xml">
+
+  <!--[if lt IE 9]>
+    <script>
+    var e = ("abbr,article,aside,audio,canvas,datalist,details," +
+    "figure,footer,header,hgroup,mark,menu,meter,nav,output," +
+    "progress,section,time,video").split(',');
+    for (var i = 0; i < e.length; i++) {
+    document.createElement(e[i]);
+    }
+    </script>
+  <![endif]-->
+</head>
+
+<body>
+<div class="preloader">
+  <div class="preloader-logo">
+    <svg width="500" height="160" viewBox="0 0 500 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path opacity="0.4" d="M15.1396 144.859H129.498V27.165L15.1396 97.9048V144.859ZM144.637 159.999H0V89.4688L144.637 0V159.999Z" fill="white"/>
+      <path opacity="0.4" d="M109.88 144.859H212.286V124.385L109.88 88.8144V144.859ZM227.426 159.998H94.746V65.874L227.426 112.964V159.998Z" fill="white"/>
+      <path opacity="0.4" d="M197.166 26.2819C187.354 26.2819 179.368 34.2679 179.368 44.0796C179.368 53.8972 187.354 61.8768 197.166 61.8768C206.983 61.8768 214.969 53.8972 214.969 44.0796C214.969 34.2679 206.983 26.2819 197.166 26.2819ZM197.166 77.0164C179.004 77.0164 164.228 62.2408 164.228 44.0796C164.228 25.918 179.004 11.1422 197.166 11.1422C215.327 11.1422 230.103 25.918 230.103 44.0796C230.103 62.2408 215.327 77.0164 197.166 77.0164Z" fill="white"/>
+      <path d="M292.464 107.631C292.464 104.208 290.417 101.63 287.019 100.632C289.091 99.54 290.904 97.2028 290.904 94.144C290.904 89.7284 287.192 87.0952 280.969 87.0952C277.411 87.0952 273.976 88.0448 271.954 88.9328L271.682 89.05V94.3104L272.348 93.9344C273.717 93.1572 277.646 91.9916 280.451 91.9916C283.954 91.9916 285.724 93.0772 285.724 95.2232C285.724 97.3816 283.714 98.6212 280.211 98.6212H275.284V103.431H280.772C284.916 103.431 287.087 105.546 287.087 107.631C287.087 110.092 284.861 111.504 280.969 111.504C277.738 111.504 273.995 110.43 271.873 108.907L271.164 108.396V113.804L271.33 113.94C273.292 115.481 277.769 116.4 280.969 116.4C287.956 116.4 292.464 112.953 292.464 107.631Z" fill="white"/>
+      <path d="M324.36 110.825H308.634V103.357H320.962V98.38H308.634V92.7128H324.119V87.736H303.38V115.795H324.36V110.825Z" fill="white"/>
+      <path d="M344.382 87.736H349.569L349.686 88.0012L361.884 115.795H355.816L351.579 105.595L346.991 94.7292L342.366 105.602L338.129 115.795H332.061L344.382 87.736Z" fill="white"/>
+      <path d="M392.172 110.825H376.446V103.357H388.774V98.38H376.446V92.7128H391.931V87.736H371.192V115.795H392.172V110.825Z" fill="white"/>
+      <path d="M422.704 103.357H409.476V115.795H404.22V87.736H409.476V98.38H422.704V87.736H427.964V115.795H422.704V103.357Z" fill="white"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M449.744 87.736L437.26 115.795H443.328L445.932 109.357H458.412L461.016 115.795H467.092L454.604 87.736H449.744ZM456.404 104.38H447.948L452.192 94.4084L456.404 104.38Z" fill="white"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M475.392 97.6648C475.392 91.356 479.304 87.736 486.124 87.736H498.496V115.795H493.276V107.513H486L480.524 115.795H473.988L480.844 105.842C479.02 105.219 475.392 103.276 475.392 97.6648ZM487 102.617H493.316V92.7128H486.524C482.492 92.7128 480.772 94.2052 480.772 97.708C480.772 101.1 482.696 102.617 487 102.617Z" fill="white"/>
+      <path d="M272.774 160H277.991V136.918H293.834V131.941H272.774V160Z" fill="white"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M296.818 160L309.299 131.941H314.165L326.646 160H320.572L317.976 153.562H305.494L302.892 160H296.818ZM307.511 148.585H315.959L311.754 138.613L307.511 148.585Z" fill="white"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M353.382 144.7C355.368 143.756 356.546 141.845 356.546 139.39C356.546 134.377 353.506 131.941 347.252 131.941H335.683V160H347.974C354.363 160 358.026 156.836 358.026 151.311C358.026 148.104 356.219 145.619 353.382 144.7ZM340.938 147.562H347.653C352.019 147.562 352.525 149.658 352.525 151.231C352.525 153.821 350.977 155.03 347.653 155.03H340.938V147.562ZM346.451 142.782H340.938V136.918H346.691C349.768 136.918 351.236 137.195 351.366 139.711C351.366 141.98 350.083 142.782 346.451 142.782Z" fill="white"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M364.384 160L376.872 131.941H381.731L394.213 160H388.138L385.542 153.562H373.06L370.458 160H364.384ZM375.077 148.585H383.526L379.32 138.613L375.077 148.585Z" fill="white"/>
+      <path d="M422.704 142.585H409.476V131.941H404.22V160H409.476V147.562H422.704V160H427.964V131.941H422.704V142.585Z" fill="white"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M445.896 142.782H452.928C459.408 142.782 462.98 145.81 462.98 151.311C462.98 156.75 459.224 160 452.928 160H440.636V131.941H445.896V142.782ZM452.608 147.562H445.816V155.03H452.608C455.844 155.03 457.484 153.747 457.484 151.231C457.484 148.727 455.936 147.562 452.608 147.562Z" fill="white"/>
+      <path d="M272.26 61.7306V52.2246H279.316V53.6526H273.772V61.7306H272.26Z" fill="white"/>
+      <path d="M288.949 61.9406C286.051 61.9826 283.923 59.6866 283.965 56.9706C283.923 54.2546 286.051 51.9586 288.949 52.0006C291.847 51.9586 293.989 54.2546 293.947 56.9706C293.989 59.6866 291.847 61.9826 288.949 61.9406ZM288.949 60.4986C291.049 60.4986 292.365 58.9726 292.365 56.9706C292.365 54.9826 291.049 53.4286 288.949 53.4286C286.877 53.4286 285.533 54.9826 285.533 56.9706C285.533 58.9726 286.877 60.4986 288.949 60.4986Z" fill="white"/>
+      <path d="M304.499 52.2246C306.403 52.2246 307.859 53.4706 307.859 55.3466C307.859 57.2226 306.389 58.4686 304.457 58.4686H301.559V61.7306H300.033V52.2246H304.499ZM304.387 57.0686C305.423 57.0686 306.291 56.3966 306.291 55.3746C306.291 54.3386 305.423 53.6526 304.387 53.6526H301.559V57.0686H304.387Z" fill="white"/>
+      <path d="M318.362 61.9406C315.464 61.9826 313.336 59.6866 313.378 56.9706C313.336 54.2546 315.464 51.9586 318.362 52.0006C321.26 51.9586 323.402 54.2546 323.36 56.9706C323.402 59.6866 321.26 61.9826 318.362 61.9406ZM318.362 60.4986C320.462 60.4986 321.778 58.9726 321.778 56.9706C321.778 54.9826 320.462 53.4286 318.362 53.4286C316.29 53.4286 314.946 54.9826 314.946 56.9706C314.946 58.9726 316.29 60.4986 318.362 60.4986Z" fill="white"/>
+      <path d="M328.957 63.4806V60.3026H329.881C330.217 58.5106 330.623 56.2146 330.623 52.2246H337.147V60.3026H338.295V63.4806H336.769V61.7306H330.483V63.4806H328.957ZM331.477 60.3026H335.621V53.6526H332.191C332.093 56.6626 331.841 58.1326 331.477 60.3026Z" fill="white"/>
+      <path d="M358.834 52.2246H360.36V61.7306H358.834V57.3766H353.892V61.7306H352.366V52.2246H353.892V55.9486H358.834V52.2246Z" fill="white"/>
+      <path d="M366.114 61.7306L370.342 52.2246H371.84L376.068 61.7306H374.29L373.38 59.4766H368.802L367.892 61.7306H366.114ZM369.376 58.0486H372.806L371.098 54.0026L369.376 58.0486Z" fill="white"/>
+      <path d="M389.658 61.7306V52.2246H397.33V61.7306H395.818V53.6526H391.17V61.7306H389.658Z" fill="white"/>
+      <path d="M408.509 52.2246C410.413 52.2246 411.869 53.4706 411.869 55.3466C411.869 57.2226 410.399 58.4686 408.467 58.4686H405.569V61.7306H404.043V52.2246H408.509ZM408.397 57.0686C409.433 57.0686 410.301 56.3966 410.301 55.3746C410.301 54.3386 409.433 53.6526 408.397 53.6526H405.569V57.0686H408.397Z" fill="white"/>
+      <path d="M418.019 61.7306V52.2246H419.531V59.4346L424.445 52.2246H426.097V61.7306H424.585V54.3946L419.657 61.7306H418.019Z" fill="white"/>
+      <path d="M437.28 52.2246C439.184 52.2246 440.64 53.4706 440.64 55.3466C440.64 57.2226 439.17 58.4686 437.238 58.4686H434.34V61.7306H432.814V52.2246H437.28ZM437.168 57.0686C438.204 57.0686 439.072 56.3966 439.072 55.3746C439.072 54.3386 438.204 53.6526 437.168 53.6526H434.34V57.0686H437.168Z" fill="white"/>
+      <path d="M451.144 61.9406C448.246 61.9826 446.118 59.6866 446.16 56.9706C446.118 54.2546 448.246 51.9586 451.144 52.0006C454.042 51.9586 456.184 54.2546 456.142 56.9706C456.184 59.6866 454.042 61.9826 451.144 61.9406ZM451.144 60.4986C453.244 60.4986 454.56 58.9726 454.56 56.9706C454.56 54.9826 453.244 53.4286 451.144 53.4286C449.072 53.4286 447.728 54.9826 447.728 56.9706C447.728 58.9726 449.072 60.4986 451.144 60.4986Z" fill="white"/>
+      <path d="M461.738 63.4806V60.3026H462.662C462.998 58.5106 463.404 56.2146 463.404 52.2246H469.928V60.3026H471.076V63.4806H469.55V61.7306H463.264V63.4806H461.738ZM464.258 60.3026H468.402V53.6526H464.972C464.874 56.6626 464.622 58.1326 464.258 60.3026Z" fill="white"/>
+      <path d="M478.837 60.3026H484.339V61.7306H477.311V52.2246H484.255V53.6526H478.837V55.9486H483.149V57.3766H478.837V60.3026Z" fill="white"/>
+      </svg>
+      
+    <div class="preloader-logo-shadow"></div>
+  </div>
+</div>
+
+<div class="wrapper">
+  <header class="header">
+    <div class="inner">
+
+      <div class="header-right">
+        <div class="header-phone">
+          <div class="header-phone-icon">
+            <svg class="sprite header-action-svg"><use xlink:href="svg/svg/symbols.svg#calling"/></svg>
+          </div>
+          <div class="header-phone-txts">
+            <a href="#" class="header-phone-phone">+375 (29) 356-10-69</a>
+            <a href="#" class="header-phone-txt">Заказать звонок</a>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <a href="#" class="header-action">
+            <svg class="sprite header-action-svg"><use xlink:href="svg/svg/symbols.svg#tg"/></svg>
+          </a>
+          <a href="#" class="header-action">
+            <svg class="sprite header-action-svg"><use xlink:href="svg/svg/symbols.svg#viber"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="screens">
+    <div class="screen main-screen">
+      <div class="screen-inner main-screen-inner">
+        <div class="inner">
+          <div class="main-screen-content">
+            <div class="main-screen-logo">
+              <img src="./images/logo.svg" alt="Зеленая гавань">
+            </div>
+  
+            <div class="main-screen-title">Жизнь <br>в Зеленой Гавани -</div>
+            <div class="main-screen-txt">это жизнь рядом с замечательным соседом. <br>Природой. Приезжайте знакомиться!</div>
+          </div>
+
+          <a href="#" class="main-screen-3d">
+            <svg class="sprite"><use xlink:href="svg/svg/symbols.svg#3d"/></svg>
+          </a>
+        </div>
+      </div>
+      <video class="main-screen-video" muted width="100%" id="main-screen-video" data-mobile="./media/mobile.webm" data-desktop="./media/desktop.webm" src="./media/mobile.webm"></video>
+    </div>
+
+    <div class="screens-nav">
+      <div class="screen-nav-down"></div>
+    </div>
+  </div><!--.screens-->
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="./scripts/scripts.js"></script>
+</body>
+</html>
