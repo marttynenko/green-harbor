@@ -1,10 +1,14 @@
 header.header {
-	position: fixed;
+	position: absolute;
 	left: 0;
 	right: 0;
 	top: 0;
 	z-index: 2;
 	padding: 32px 0px 0px;
+
+	@media (min-width: 1024px) {
+		position: fixed;
+	}
 }
 
 .header-right {
@@ -68,6 +72,20 @@ header.header {
 	border-radius: 24px;
 	border: 1px solid rgba(#FFF, .2);
 	background-color: rgba(#FFF, .07);
+	transition: border .3s, background-color .3s;
+
+	// svg {
+	// 	transition: filter .3s;
+	// }
+
+	&:hover {
+		border-color: rgba(#FFF, .6);
+		background-color: rgba(#FFF, .1);
+
+		svg {
+			filter: brightness(10);
+		}
+	}
 }
 
 

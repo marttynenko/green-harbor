@@ -5,6 +5,7 @@ const image = require('gulp-image')
 const del = require('del')
 const autoprefixer = require('gulp-autoprefixer')
 const sourcemaps = require('gulp-sourcemaps')
+const gulpif = require('gulp-if')
 
 
 
@@ -50,9 +51,8 @@ const clean = async () => {
 
 const compressImages = async () => {
     return src(
-        [
-            './src/images/benefits/**/*',
-            './src/images/*.{jpg,jpeg,png,webp}',
+        [   
+            './src/images/**/*.{jpg,jpeg,png,webp}',
         ],
         { base: './src/images' }
     )
@@ -63,6 +63,7 @@ const compressImages = async () => {
 const copyAll = async () => {
     return src(
         [
+            './src/css/libs/**/*',
             './src/scripts/**/*',
             './src/media/**/*',
             './src/images/svg/**/*',
@@ -82,11 +83,12 @@ const copyAll = async () => {
 
 
 exports.styles = styles;
+exports.buildStyles = buildStyles;
 exports.svg = svg;
 exports.default = function () {
     watch('src/sass/**/*.scss', styles);
     watch('src/images/svg/*.svg', svg);
 };
 
-const buildSeries = series(clean, compressImages, buildStyles, copyAll)
+const buildSeries = series(clean, copyAll, buildStyles, compressImages)
 exports.build = buildSeries;
