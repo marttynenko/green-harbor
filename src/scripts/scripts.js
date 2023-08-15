@@ -108,7 +108,7 @@ function animateScreenOne() {
   const logo = document.querySelector('.main-screen-logo')
   const title = document.querySelector('.main-screen-title')
   const txt = document.querySelector('.main-screen-txt')
-  // const td = document.querySelector('.main-screen-3d')
+  const td = document.querySelector('.main-screen-mute')
 
   // msVideo.play()
   playVideo()
@@ -129,11 +129,11 @@ function animateScreenOne() {
       {opacity: 0, y: -25},
       {opacity: 1, y: 0, duration: 0.65, delay: -0.2}
     )
-    // .fromTo(
-    //   td,
-    //   {opacity: 0, x: 25, rotate: -180 },
-    //   {opacity: 1, x: 0, rotate: 0, duration: 0.65, delay: -0.2, ease:Linear.easeNone}
-    // )
+    .fromTo(
+      td,
+      {opacity: 0, x: 25 },
+      {opacity: 1, x: 0, duration: 0.65, delay: -0.2}
+    )
 }
 
 function animateScreenParallax(screen) {
@@ -184,12 +184,12 @@ document.addEventListener('mousemove',(e) => {
 })
 
 
-document.querySelectorAll('.screen-parallax-mute').forEach(el => {
+document.querySelectorAll('.screen-parallax-mute, .main-screen-mute').forEach(el => {
   el.addEventListener('click', (e) => {
     e = e || window.event
     e.preventDefault()
-    const screen = e.target.closest('.screen-parallax')
-    const audio = screen.querySelector('.screen-parallax-audio')
+    const screen = e.target.closest('.screen-parallax') || e.target.closest('.screen')
+    const audio = screen.querySelector('audio')
     const otherAudios = document.querySelectorAll('audio')
 
     if (!audio) return
@@ -218,7 +218,7 @@ document.querySelectorAll('audio').forEach(el => {
   el.addEventListener('ended',(e) => {
     // console.log(e, 'end')
     const mute = e.target.previousElementSibling
-    if (mute && mute.classList.contains('screen-parallax-mute')) {
+    if (mute && mute.classList.contains('volume-control')) {
       mute.classList.remove('playing')
     }
 

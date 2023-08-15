@@ -203,19 +203,25 @@
     <div class="screen main-screen active">
       <div class="screen-inner main-screen-inner">
         <div class="inner">
-          <div class="main-screen-content">
-            <div class="main-screen-logo">
-              <img src="./images/logo.svg" alt="Зеленая гавань">
+          <div class="main-screen-wrp">
+            <div class="main-screen-content">
+              <div class="main-screen-logo">
+                <img src="./images/logo.svg" alt="Зеленая гавань">
+              </div>
+    
+              <div class="main-screen-title">Жизнь в Зеленой Гавани — это жизнь 
+                рядом с замечательным соседом. Природой. <br>Приезжайте знакомиться!</div>
             </div>
   
-            <div class="main-screen-title">Жизнь в Зеленой Гавани — это жизнь 
-              рядом с замечательным соседом. Природой. <br>Приезжайте знакомиться!</div>
-            <!-- <div class="main-screen-txt">это жизнь рядом с замечательным соседом. <br>Природой. Приезжайте знакомиться!</div> -->
+            <a href="#" class="volume-control main-screen-mute">
+              <span class="volume-control-txt notplaying">Включи звук - </span>
+              <span class="volume-control-txt playing">Выключи звук - </span>
+              <i class="volume-control-icon">
+                <div class="volume-control-anim"></div>
+              </i>
+            </a>
+            <audio src="./media/main-audio.mp3" class="main-screen-audio"></audio>
           </div>
-
-          <!-- <a href="#" class="main-screen-3d">
-            <svg class="sprite"><use xlink:href="svg/svg/symbols.svg#3d"/></svg>
-          </a> -->
         </div>
       </div>
       <video class="main-screen-video" poster="./images/poster-mobile.png" muted playsinline width="100%" id="main-video-mobile">
