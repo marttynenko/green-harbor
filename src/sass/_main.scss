@@ -182,7 +182,14 @@
 
   @media (max-width: 480px) {
     &-title {
-      font-size: 7vw;
+      font-size: 6.6vw;
+      margin-bottom: 0;
+    }
+  }
+
+  @media (max-width: 380px) {
+    &-title {
+      font-size: 6.4vw;
       margin-bottom: 0;
     }
   }
@@ -365,7 +372,7 @@
 
   @media (max-width: 599px) {
     &-logo {
-      margin-bottom: 30px;
+      // margin-bottom: 30px;
     }
     
     &-title {
@@ -379,13 +386,15 @@
 
   @media (max-width: 480px) {
     &-title {
-      @include fz(32);
+      // @include fz(32);
+      font-size: 6.6vw;
     }
   }
 
-  @media (max-width: 390px) {
+  @media (max-width: 380px) {
     &-title {
-      @include fz(28);
+      // @include fz(28);
+      font-size: 6.4vw;
     }
   }
 }
@@ -1124,11 +1133,21 @@
 
   @media (max-width: 599px) {
     &-descr {
-      // left: 24px;
-      // right: 24px;
-      // bottom: 24px;
       padding: 0px 24px 24px 24px;
       @include fz(24);
+    }
+  }
+
+  @media (max-width: 480px) {
+    &-descr {
+      padding: 0px 20px 24px 20px;
+      font-size: 6.6vw;
+    }
+  }
+
+  @media (max-width: 380px) {
+    &-descr {
+      font-size: 6.4vw;
     }
   }
 }

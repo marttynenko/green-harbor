@@ -2390,7 +2390,13 @@ span.invalid {
 }
 @media (max-width: 480px) {
   .main-screen-title {
-    font-size: 7vw;
+    font-size: 6.6vw;
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 380px) {
+  .main-screen-title {
+    font-size: 6.4vw;
     margin-bottom: 0;
   }
 }
@@ -2554,9 +2560,6 @@ span.invalid {
   }
 }
 @media (max-width: 599px) {
-  .screen-parallax-logo {
-    margin-bottom: 30px;
-  }
   .screen-parallax-title {
     font-size: 36px;
     font-size: 2.25rem;
@@ -2567,14 +2570,12 @@ span.invalid {
 }
 @media (max-width: 480px) {
   .screen-parallax-title {
-    font-size: 32px;
-    font-size: 2rem;
+    font-size: 6.6vw;
   }
 }
-@media (max-width: 390px) {
+@media (max-width: 380px) {
   .screen-parallax-title {
-    font-size: 28px;
-    font-size: 1.75rem;
+    font-size: 6.4vw;
   }
 }
 
@@ -3395,6 +3396,17 @@ span.invalid {
     padding: 0px 24px 24px 24px;
     font-size: 24px;
     font-size: 1.5rem;
+  }
+}
+@media (max-width: 480px) {
+  .cf-slide-descr {
+    padding: 0px 20px 24px 20px;
+    font-size: 6.6vw;
+  }
+}
+@media (max-width: 380px) {
+  .cf-slide-descr {
+    font-size: 6.4vw;
   }
 }
 
