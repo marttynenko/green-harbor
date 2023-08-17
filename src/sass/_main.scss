@@ -999,7 +999,32 @@
   display: flex;
   align-items: center;
   z-index: 1;
-  padding: 0;
+  padding: 110px 0px 0px;
+
+  &-title {
+    @include fz(28);
+    font-family: $headingsfont;
+    color: #FFF;
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  @media (max-width: 1024px) {
+    padding: 35px 0px 0px;
+  }
+
+  @media (max-width: 599px) {
+    &-title {
+      text-align: left;
+      @include fz(24);
+    }
+  }
+
+  @media (max-width: 480px) {
+    &-title {
+      @include fz(22);
+    }
+  }
 }
 .screen-slider-bgs {
   div {
@@ -1043,11 +1068,20 @@
   }
 }
 .cf-swiper {
-  padding: 82px 0;
+  // padding: 82px 0;
+  padding: 30px 0 110px;
   overflow: visible;
+
+  @media (max-width: 1024px) {
+    padding: 30px 0px 80px;
+  }
+  @media (max-width: 599px) {
+    padding-top: 22px;
+  }
 }
 .cf-swiper-slide {
   width: 440px;
+  width: Min(440px,22vw);
   max-width: 100%;
   text-align: center;
 
@@ -1088,7 +1122,7 @@
   &-img {
     display: block;
     border-radius: 30px;
-    max-height: calc(100vh - 164px);
+    max-height: calc(100vh - 280px);
     transform: scale(1.2) rotate(-1.5deg);
     // transform-origin: right center;
   }
@@ -1120,14 +1154,18 @@
 
   @media (max-width: 1366px) {
     &-descr {
+      @include fz(28);
       padding: 0px 30px 30px 30px;
     }
   }
 
   @media (max-width: 1024px) {
-    &-descr {
-      // padding: 0px 30px 30px 30px;
-      @include fz(28);
+    // &-descr {
+    //   // padding: 0px 30px 30px 30px;
+    //   @include fz(28);
+    // }
+    &-img {
+      max-height: calc(100vh - 195px);
     }
   }
 
@@ -1136,12 +1174,22 @@
       padding: 0px 24px 24px 24px;
       @include fz(24);
     }
+
+    &-img {
+      max-height: calc(100vh - 200px);
+    }
   }
 
   @media (max-width: 480px) {
     &-descr {
       padding: 0px 20px 24px 20px;
       font-size: 6.6vw;
+    }
+  }
+
+  @media (max-width: 430px) {
+    &-img {
+      max-height: calc(100vh - 230px);
     }
   }
 
@@ -1458,13 +1506,13 @@
 .footer-links {
   display: inline-block;
   vertical-align: top;
-  padding-top: 5px;
+  padding-top: 19px;
 }
 .footer-link {
   display: block;
   padding-left: 36px;
   position: relative;
-  margin-bottom: 10px;
+  margin-bottom: 3px;
   color: #FFF;
   @include fz(20);
   font-family: $headingsfont;
@@ -1514,6 +1562,12 @@
     &-link {
       margin-bottom: 5px;
     }
+  }
+}
+
+@media (max-width: 1366px) and (min-width: 880px) {
+  .footer-links {
+    padding-top: 5px;
   }
 }
 
@@ -1575,6 +1629,9 @@
     &-top-btn {
       padding-right: 0;
     }
+    &-links {
+      padding-top: 15px;
+    }
     &-link {
       &:last-child {
         margin-bottom: 0;
@@ -1582,6 +1639,13 @@
     }
   }
 }
+
+@media (max-width: 700px) {
+  .footer-links {
+    display: block;
+    padding-top: 5px;
+  }
+} 
 
 @media (max-width: 599px) {
   .footer {
