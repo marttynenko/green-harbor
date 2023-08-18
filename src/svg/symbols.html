@@ -200,6 +200,10 @@
 			<path d="M21.97 18.33c0 .36-.08.73-.25 1.09-.17.36-.39.7-.68 1.02-.49.54-1.03.93-1.64 1.18-.6.25-1.25.38-1.95.38-1.02 0-2.11-.24-3.26-.73s-2.3-1.15-3.44-1.98a28.75 28.75 0 0 1-3.28-2.8 28.414 28.414 0 0 1-2.79-3.27c-.82-1.14-1.48-2.28-1.96-3.41C2.24 8.67 2 7.58 2 6.54c0-.68.12-1.33.36-1.93.24-.61.62-1.17 1.15-1.67C4.15 2.31 4.85 2 5.59 2c.28 0 .56.06.81.18.26.12.49.3.67.56l2.32 3.27c.18.25.31.48.4.7.09.21.14.42.14.61 0 .24-.07.48-.21.71-.13.23-.32.47-.56.71l-.76.79c-.11.11-.16.24-.16.4 0 .08.01.15.03.23.03.08.06.14.08.2.18.33.49.76.93 1.28.45.52.93 1.05 1.45 1.58.54.53 1.06 1.02 1.59 1.47.52.44.95.74 1.29.92.05.02.11.05.18.08.08.03.16.04.25.04.17 0 .3-.06.41-.17l.76-.75c.25-.25.49-.44.72-.56.23-.14.46-.21.71-.21.19 0 .39.04.61.13.22.09.45.22.7.39l3.31 2.35c.26.18.44.39.55.64.1.25.16.5.16.78z" stroke="#fff" stroke-opacity=".5" stroke-width="1.5" stroke-miterlimit="10"></path><path d="M18.5 9c0-.6-.47-1.52-1.17-2.27-.64-.69-1.49-1.23-2.33-1.23M22 9c0-3.87-3.13-7-7-7" stroke="#fff" stroke-opacity=".5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
 		</symbol>
 	
+		<symbol id="home" viewBox="0 0 29 28">
+			<path d="M2.834 25.667h23.333M18.012 25.655l-14 .023L4 8.248a2.34 2.34 0 0 1 1.038-1.936l4.667-3.115a2.326 2.326 0 0 1 2.59 0l4.667 3.115A2.31 2.31 0 0 1 18 8.248l.012 17.407zM23.81 25.678V21M23.833 14a2.34 2.34 0 0 0-2.333 2.333v2.334A2.34 2.34 0 0 0 23.833 21a2.34 2.34 0 0 0 2.334-2.333v-2.334A2.34 2.34 0 0 0 23.833 14zM4 16.333h14M11 25.667v-4.375" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path><path d="M11 12.25a1.75 1.75 0 1 0 0-3.5 1.75 1.75 0 0 0 0 3.5z" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+		</symbol>
+	
 		<symbol id="leaf" viewBox="0 0 38 38">
 			<path d="M23.75 14.25L3.562 34.438M6.944 31.056A19.013 19.013 0 0 1 31.056 6.944 19.014 19.014 0 0 1 6.944 31.056z" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
 		</symbol>
@@ -231,7 +235,7 @@
 </svg>
 
 <header>
-    <h1 id="logo">Gulp SVG Sprites <small>(18 icons in &lt;symbol&gt; mode)</small></h1>
+    <h1 id="logo">Gulp SVG Sprites <small>(19 icons in &lt;symbol&gt; mode)</small></h1>
     <h4>Files Generated:</h4>
     <ol>
         <li><a href="svg/symbols.svg">svg/symbols.svg</a></li>
@@ -433,6 +437,23 @@
             <button onclick="invertBackground('icon-box-footer-phone')">Invert Background</button>
             <div class="snippet-popover" id="snippet-footer-phone">
                 <pre><code>&lt;svg class=&quot;icon footer-phone&quot;&gt;&lt;use xlink:href=&quot;#footer-phone&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+        
+
+        <li title="home">
+            <div class="icon-box" id="icon-box-home">
+                <svg class="icon home">
+                    <use xlink:href="#home" />
+                </svg>
+            </div>
+            <h2>home</h2>
+            <button onclick="showPopover('snippet-home')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-home')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-home">
+                <pre><code>&lt;svg class=&quot;icon home&quot;&gt;&lt;use xlink:href=&quot;#home&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
                 <button onclick="hidePopover()">Close</button>
             </div>
         </li>

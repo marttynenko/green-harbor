@@ -293,7 +293,7 @@ document.querySelectorAll('.screen-parallax').forEach((el,index) => {
   ScrollTrigger.create({
     trigger: el,
     start: "top bottom",
-    end: "bottom center",
+    end: "bottom 35%",
     onUpdate: self => {
       const progress = self.progress
       // const direction = self.direction
