@@ -49,12 +49,6 @@ jQuery.validator.addMethod("telephone", function(value, element) {
 }, "Некорректный формат телефона");
 
 const FARBA = {
-  // WH: window.innerHeight,
-
-  // WW: document.documentElement.clientWidth,
-
-  // isTouch: 'ontouchstart' in window || navigator.msMaxTouchPoints,
-
   //lazy load для сторонних либ
   lazyLibraryLoad(scriptSrc, linkHref, callback) {
     let script;
@@ -83,20 +77,9 @@ const FARBA = {
 }
 
 
-// const msVideo = document.querySelector('#main-screen-video')
-// function updateVideoSrc() {
-//   let ornt = window.innerWidth > window.innerHeight ? 'landscape' : 'portrait'
-
-//   if (ornt === 'portrait') {
-//     msVideo.src = msVideo.dataset.mobile
-//   } else {
-//     msVideo.src = msVideo.dataset.desktop
-//   }
-// }
-// updateVideoSrc()
 const playVideo = () => {
   let video
-  if (window.innerWidth >= 1024) {
+  if (window.innerWidth >= 1025) {
     video = document.querySelector('#main-video-desktop')
   } else {
     video = document.querySelector('#main-video-mobile')
@@ -110,7 +93,6 @@ function animateScreenOne() {
   const txt = document.querySelector('.main-screen-txt')
   const td = document.querySelector('.main-screen-mute')
 
-  // msVideo.play()
   playVideo()
   const tl = gsap.timeline()
   tl
@@ -201,7 +183,7 @@ document.querySelectorAll('.screen-parallax-mute, .main-screen-mute').forEach(el
         if (mute) mute.classList.remove('playing')
       }
     })
-    // audio.paused ? audio.play() : audio.pause()
+    
     if (audio.paused) {
       audio.play()
       el.classList.add('playing')
@@ -216,7 +198,6 @@ document.querySelectorAll('.screen-parallax-mute, .main-screen-mute').forEach(el
 //снимаем активность всех иконок аудио по завершению
 document.querySelectorAll('audio').forEach(el => {
   el.addEventListener('ended',(e) => {
-    // console.log(e, 'end')
     const mute = e.target.previousElementSibling
     if (mute && mute.classList.contains('volume-control')) {
       mute.classList.remove('playing')
@@ -293,10 +274,9 @@ document.querySelectorAll('.screen-parallax').forEach((el,index) => {
   ScrollTrigger.create({
     trigger: el,
     start: "top bottom",
-    end: "bottom 35%",
+    end: "bottom 15%",
     onUpdate: self => {
       const progress = self.progress
-      // const direction = self.direction
       document.documentElement.style.setProperty(`--screen-${index}-progress`, `${progress}`);
     }
   })
@@ -338,8 +318,6 @@ function initSlider () {
     grabCursor: true,
     centeredSlides: true,
     slidesPerView: 'auto',
-    // slidesPerView: 1,
-    // rewind: true,
     loop: true,
     coverflowEffect: {
       rotate: 0,
@@ -353,9 +331,6 @@ function initSlider () {
       prevEl: ".cf-swiper-prev",
     },
     breakpoints: {
-      // 599: {
-      //   initialSlide: 2,
-      // }
       1024: {
         slidesPerView: 3,
       }
@@ -461,26 +436,3 @@ function initMask() {
   
 }
 initMask()
-
-
-
-//добавить matchMedia для очистки переменных
-//вырубать все звуки кроме текущего
-
-// const screensCount = document.querySelectorAll('.screen').length
-// // const screensRatio = 1 / (screensCount - 1)
-// const screensRatio = 1 / (screensCount)
-// console.log(screensCount, screensRatio)
-// document.addEventListener('scroll', (e) => {
-//   if (window.innerWidth > 1024) return
-//   const sPos = window.pageYOffset
-//   const vh = window.innerHeight
-//   const dh = document.documentElement.scrollHeight
-//   // const k =  sPos / (dh - vh)
-//   const k =  sPos / dh
-//   const curScreen = Math.floor(k / screensRatio)
-//   // const screenProgress = (Math.abs((k - (screensRatio * (curScreen + 1)))) * (screensCount - 1)) - 1
-//   const screenProgress = (Math.abs((k - (screensRatio * (curScreen + 1)))) * (screensCount)) - 1
-//   const curScreenProgress = Math.min(Math.abs(screenProgress),1)
-//   console.log(sPos, k, curScreen, curScreenProgress)
-// })

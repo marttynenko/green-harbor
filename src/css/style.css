@@ -2221,7 +2221,7 @@ span.invalid {
     max-width: 20%;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1024.99px) {
   .screens {
     max-height: 100vh;
     overflow-x: hidden;
@@ -2252,7 +2252,7 @@ span.invalid {
           flex: 0 0 100%;
   max-width: 100%;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1024.99px) {
   .screen {
     -webkit-box-align: start;
         -ms-flex-align: start;
@@ -2262,18 +2262,23 @@ span.invalid {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1024.99px) {
   #main-video-desktop {
     display: none;
     visibility: hidden;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   #main-video-mobile {
     display: none;
     visibility: hidden;
   }
 }
+#main-video-mobile {
+  -o-object-position: center bottom;
+     object-position: center bottom;
+}
+
 .main-screen {
   height: 100svh;
   padding-bottom: 140px;
@@ -2355,7 +2360,7 @@ span.invalid {
     right: 40px;
   }
 }
-@media (max-width: 1024px) {
+@media (max-width: 1024.99px) {
   .main-screen {
     padding-top: 120px;
     background: green url(../images/poster-mobile.png) center no-repeat;
@@ -2435,7 +2440,7 @@ span.invalid {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
 }
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .screen-parallax-3d {
     will-change: transform;
   }
@@ -2444,7 +2449,7 @@ span.invalid {
   position: relative;
   padding-right: 200px;
 }
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .screen-parallax-content {
     opacity: 0;
   }
@@ -2532,7 +2537,7 @@ span.invalid {
     font-size: 2.625rem;
   }
 }
-@media (max-width: 1024px) {
+@media (max-width: 1024.99px) {
   .screen-parallax-content {
     padding-right: 0;
   }
@@ -2604,7 +2609,7 @@ span.invalid {
   -webkit-animation: slide 2s infinite linear;
           animation: slide 2s infinite linear;
 }
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .screen.active .screen-parallax-3d {
     -webkit-transform: rotateX(var(--move-y)) rotateY(var(--move-x));
             transform: rotateX(var(--move-y)) rotateY(var(--move-x));
@@ -2633,7 +2638,7 @@ span.invalid {
   z-index: 0;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1024.99px) {
   .volume-control-anim:before {
     -webkit-animation: pulse 2s infinite;
             animation: pulse 2s infinite;
@@ -2647,38 +2652,77 @@ span.invalid {
     will-change: transform;
   }
 
+  .screen-parallax-layers:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: radial-gradient(circle, rgba(34, 46, 63, 0) 0%, rgba(0, 0, 0, 0.35) 100%);
+    z-index: -9;
+    -webkit-transform: translateZ(110px);
+            transform: translateZ(110px);
+  }
+
+  .screen-parallax-1 .screen-parallax-bg {
+    left: -15vw;
+    right: -15vw;
+    top: -10vh;
+    bottom: -10vh;
+    -webkit-transform: translateZ(calc(-140px * var(--screen-0-progress))) scale(1.1) rotateY(calc(var(--screen-0-progress)*12deg));
+            transform: translateZ(calc(-140px * var(--screen-0-progress))) scale(1.1) rotateY(calc(var(--screen-0-progress)*12deg));
+  }
+
+  .screen-parallax-2 .screen-parallax-bg {
+    left: -15vw;
+    right: -15vw;
+    top: -10vh;
+    bottom: -10vh;
+    -webkit-transform: translateZ(calc(-140px * var(--screen-1-progress))) scale(1.1) rotateY(calc(var(--screen-1-progress)*(-8deg)));
+            transform: translateZ(calc(-140px * var(--screen-1-progress))) scale(1.1) rotateY(calc(var(--screen-1-progress)*(-8deg)));
+  }
+
+  .screen-parallax-3 .screen-parallax-bg {
+    left: -15vw;
+    right: -15vw;
+    top: -10vh;
+    bottom: -10vh;
+    -webkit-transform: translateZ(calc(-140px * var(--screen-2-progress))) scale(1.1) rotateY(calc(var(--screen-2-progress)*12deg));
+            transform: translateZ(calc(-140px * var(--screen-2-progress))) scale(1.1) rotateY(calc(var(--screen-2-progress)*12deg));
+  }
+
   .layer-1-leafsright, .layer-1-leafsleft, .layer-1-vinetka {
     display: none;
   }
   .layer-1-bird {
     right: 0;
-    bottom: -15%;
+    bottom: -20%;
     width: 70%;
-    -webkit-transform: translateZ(50px) translateY(calc(var(--screen-0-progress)*(-15vh))) rotateZ(calc(var(--screen-0-progress)*6deg));
-            transform: translateZ(50px) translateY(calc(var(--screen-0-progress)*(-15vh))) rotateZ(calc(var(--screen-0-progress)*6deg));
+    -webkit-transform: translateZ(50px) translateY(calc(var(--screen-0-progress)*(-25vh))) rotateZ(calc(var(--screen-0-progress)*9deg)) scale(calc(1 + var(--screen-0-progress)*0.15));
+            transform: translateZ(50px) translateY(calc(var(--screen-0-progress)*(-25vh))) rotateZ(calc(var(--screen-0-progress)*9deg)) scale(calc(1 + var(--screen-0-progress)*0.15));
+    z-index: -8 !important;
   }
   .layer-1-smog {
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    -o-object-fit: contain;
-       object-fit: contain;
+    -o-object-fit: cover;
+       object-fit: cover;
     -o-object-position: center;
        object-position: center;
-    -webkit-transform: translateZ(100px) translateY(calc(var(--screen-0-progress)*(7vh)));
-            transform: translateZ(100px) translateY(calc(var(--screen-0-progress)*(7vh)));
+    -webkit-transform: translateZ(100px) translateY(calc(var(--screen-0-progress)*5vh)) scale(calc(1 + var(--screen-0-progress)*0.75));
+            transform: translateZ(100px) translateY(calc(var(--screen-0-progress)*5vh)) scale(calc(1 + var(--screen-0-progress)*0.75));
   }
   .layer-1-sun {
     left: 50%;
     bottom: 0;
     width: auto;
-    height: 120vh;
-    -webkit-transform: translate3d(-50%, 0, 150px) rotateZ(calc(var(--screen-0-progress)*35deg));
-            transform: translate3d(-50%, 0, 150px) rotateZ(calc(var(--screen-0-progress)*35deg));
-    -webkit-transform-origin: center top;
-        -ms-transform-origin: center top;
-            transform-origin: center top;
+    height: 230vh;
+    -webkit-transform: translate3d(-50%, 0, 150px) rotateZ(calc(45deg - var(--screen-0-progress)*45deg));
+            transform: translate3d(-50%, 0, 150px) rotateZ(calc(45deg - var(--screen-0-progress)*45deg));
+    z-index: -8 !important;
   }
 
   .layer-2-leafs {
@@ -2689,27 +2733,30 @@ span.invalid {
     bottom: -16%;
     max-width: 80% !important;
     width: 670px;
-    -webkit-transform: translateZ(100px) translateY(calc(var(--screen-1-progress)*(-15vh))) rotateZ(calc(var(--screen-1-progress)*10deg));
-            transform: translateZ(100px) translateY(calc(var(--screen-1-progress)*(-15vh))) rotateZ(calc(var(--screen-1-progress)*10deg));
+    -webkit-transform: translateZ(100px) translateY(calc(var(--screen-1-progress)*(-16vh))) rotateZ(calc(var(--screen-1-progress)*10deg)) scale(calc(1 + var(--screen-1-progress)*0.15));
+            transform: translateZ(100px) translateY(calc(var(--screen-1-progress)*(-16vh))) rotateZ(calc(var(--screen-1-progress)*10deg)) scale(calc(1 + var(--screen-1-progress)*0.15));
+    z-index: -8 !important;
   }
   .layer-2-minifly {
-    left: -5%;
-    top: 30%;
+    left: 25%;
+    top: 38%;
     width: 320px;
     max-width: 50% !important;
-    -webkit-transform: translateZ(180px) translateY(calc(var(--screen-1-progress)*(5vh))) rotateZ(calc(var(--screen-1-progress)*(-18deg)));
-            transform: translateZ(180px) translateY(calc(var(--screen-1-progress)*(5vh))) rotateZ(calc(var(--screen-1-progress)*(-18deg)));
+    -webkit-transform: translate3d(calc(var(--screen-1-progress)*(-25vw)), calc(var(--screen-1-progress)*(-7vh)), 180px) rotateZ(calc(var(--screen-1-progress)*(25deg))) scale(calc(1 - var(--screen-1-progress)*0.2));
+            transform: translate3d(calc(var(--screen-1-progress)*(-25vw)), calc(var(--screen-1-progress)*(-7vh)), 180px) rotateZ(calc(var(--screen-1-progress)*(25deg))) scale(calc(1 - var(--screen-1-progress)*0.2));
+    z-index: -8 !important;
   }
   .layer-2-sun {
     left: 50%;
     bottom: 0;
     width: auto;
     height: 120vh;
-    -webkit-transform: translate3d(-50%, 0, 240px) rotateZ(calc(25deg - var(--screen-1-progress)*(38deg)));
-            transform: translate3d(-50%, 0, 240px) rotateZ(calc(25deg - var(--screen-1-progress)*(38deg)));
+    -webkit-transform: translate3d(-50%, 0, 240px) rotateZ(calc(-25deg + var(--screen-1-progress)*35deg));
+            transform: translate3d(-50%, 0, 240px) rotateZ(calc(-25deg + var(--screen-1-progress)*35deg));
     -webkit-transform-origin: center top;
         -ms-transform-origin: center top;
             transform-origin: center top;
+    z-index: -8 !important;
   }
 
   .layer-3-moon {
@@ -2821,13 +2868,11 @@ span.invalid {
   .layer-3-leafs {
     left: -9%;
     width: 49%;
-    -webkit-transform: translateZ(100px) translateY(calc(var(--screen-2-progress)*(-10vh))) rotateZ(-20deg);
-            transform: translateZ(100px) translateY(calc(var(--screen-2-progress)*(-10vh))) rotateZ(-20deg);
-  }
-
-  .layer-1-sun,
-.layer-2-sun {
-    height: 115vh;
+    -webkit-transform: translateZ(100px) translateY(calc(var(--screen-2-progress)*4vh)) scale(calc(1 - var(--screen-2-progress)*0.15)) rotateZ(-20deg);
+            transform: translateZ(100px) translateY(calc(var(--screen-2-progress)*4vh)) scale(calc(1 - var(--screen-2-progress)*0.15)) rotateZ(-20deg);
+    -webkit-transform-origin: left center;
+        -ms-transform-origin: left center;
+            transform-origin: left center;
   }
 }
 @media (max-width: 480px) {
@@ -2850,7 +2895,7 @@ span.invalid {
     top: 35%;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .layer-1-smog {
     left: -8%;
     width: 90%;
@@ -3191,7 +3236,7 @@ span.invalid {
 .screen-nav-btn-txt {
   margin: 0px 24px;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1024.99px) {
   .screen-nav-btn-txt {
     display: none;
   }
@@ -3243,7 +3288,7 @@ span.invalid {
           filter: none;
   background-color: #8D9B6B;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1024.99px) {
   .screen-nav-btn-icon {
     width: 60px;
     -webkit-box-flex: 0;
@@ -3273,7 +3318,7 @@ span.invalid {
   text-align: center;
   line-height: 1.3;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1024.99px) {
   .screen-slider {
     padding: 35px 0px 0px;
   }
@@ -3325,7 +3370,7 @@ span.invalid {
   padding: 0px 82px;
   position: relative;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1024.99px) {
   .cf-swiper-container {
     position: unset;
   }
@@ -3345,7 +3390,7 @@ span.invalid {
   padding: 30px 0 110px;
   overflow: visible;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1024.99px) {
   .cf-swiper {
     padding: 30px 0px 80px;
   }
@@ -3377,7 +3422,7 @@ span.invalid {
   -webkit-filter: brightness(0.2) blur(3px);
           filter: brightness(0.2) blur(3px);
 }
-@media (max-width: 1024px) {
+@media (max-width: 1024.99px) {
   .cf-swiper-slide {
     width: 370px;
   }
@@ -3445,7 +3490,7 @@ span.invalid {
     padding: 0px 30px 30px 30px;
   }
 }
-@media (max-width: 1024px) {
+@media (max-width: 1024.99px) {
   .cf-slide-img {
     max-height: calc(100vh - 195px);
   }
@@ -3503,10 +3548,12 @@ span.invalid {
   display: block;
   margin: 0 auto;
 }
-.cf-swiper-btn:not(.swiper-button-disabled):hover {
-  border-color: rgba(255, 255, 255, 0.7);
+@media (min-width: 1025px) {
+  .cf-swiper-btn:not(.swiper-button-disabled):hover {
+    border-color: rgba(255, 255, 255, 0.7);
+  }
 }
-@media (max-width: 1024px) {
+@media (max-width: 1024.99px) {
   .cf-swiper-btn {
     display: none;
   }
@@ -3515,15 +3562,33 @@ span.invalid {
   opacity: 0.5;
   cursor: not-allowed;
 }
+@media (max-width: 599px) {
+  .cf-swiper-btn {
+    display: block;
+    height: 42px;
+    width: 52px;
+    padding: 8px;
+  }
+}
 
 .cf-swiper-prev {
   left: 0;
   border-radius: 30px 0px 0px 30px;
 }
+@media (max-width: 599px) {
+  .cf-swiper-prev {
+    left: 10px;
+  }
+}
 
 .cf-swiper-next {
   right: 0;
   border-radius: 0px 30px 30px 0;
+}
+@media (max-width: 599px) {
+  .cf-swiper-next {
+    right: 10px;
+  }
 }
 
 .screen-slider-audio {
@@ -3539,7 +3604,7 @@ span.invalid {
   bottom: 70px;
   z-index: 3;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1024.99px) {
   .screen-slider-volume {
     right: auto;
     left: 30px;
@@ -3636,7 +3701,7 @@ span.invalid {
 .contacts-btn:hover {
   background-color: #34462f;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1024.99px) {
   .contacts {
     padding: 40px 50px;
   }
@@ -3766,9 +3831,6 @@ span.invalid {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 .footer-top-links {
   -webkit-box-flex: 0;
@@ -3867,7 +3929,7 @@ span.invalid {
     padding-top: 5px;
   }
 }
-@media (max-width: 1024px) {
+@media (max-width: 1024.99px) {
   .footer-inner {
     padding-left: 50px;
     padding-right: 50px;
@@ -3971,6 +4033,33 @@ span.invalid {
     padding: 0px 5px;
     height: 70px;
     line-height: 70px;
+  }
+}
+
+.footer-appeal {
+  color: #FFF;
+  display: inline-block;
+  font-family: "Lack";
+  font-size: 20px;
+  font-size: 1.25rem;
+  padding-top: 19px;
+}
+@media (max-width: 1024.99px) {
+  .footer-appeal {
+    font-size: 18px;
+    font-size: 1.125rem;
+    padding-top: 14px;
+  }
+}
+@media (max-width: 880px) {
+  .footer-appeal {
+    padding-top: 0;
+  }
+}
+@media (max-width: 599px) {
+  .footer-appeal {
+    font-size: 16px;
+    font-size: 1rem;
   }
 }
 /*# sourceMappingURL=sourcemaps/style.css.map */
