@@ -276,6 +276,11 @@ document.querySelectorAll('.screen-parallax').forEach((el,index) => {
     start: "top bottom",
     end: "bottom 15%",
     onUpdate: self => {
+      if (self.isActive) {
+        el.classList.add('m-active')
+      } else {
+        el.classList.remove('m-active')
+      }
       const progress = self.progress
       document.documentElement.style.setProperty(`--screen-${index}-progress`, `${progress}`);
     }
