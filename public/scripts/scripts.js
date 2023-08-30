@@ -274,7 +274,7 @@ document.querySelectorAll('.screen-parallax').forEach((el,index) => {
   ScrollTrigger.create({
     trigger: el,
     start: "top bottom",
-    end: "bottom 15%",
+    // end: "bottom 15%",
     onUpdate: self => {
       if (self.isActive) {
         el.classList.add('m-active')
@@ -323,6 +323,7 @@ function initSlider () {
     grabCursor: true,
     centeredSlides: true,
     slidesPerView: 'auto',
+    speed: 1200,
     loop: true,
     coverflowEffect: {
       rotate: 0,

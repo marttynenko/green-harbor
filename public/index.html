@@ -116,7 +116,7 @@
   </style>
   
   <link rel="stylesheet" href="./css/libs/swiper.min.css" type="text/css" media="all">
-  <link rel="stylesheet" href="./css/style.css?ver=1.10" type="text/css" media="all" />
+  <link rel="stylesheet" href="./css/style.css?ver=1.15" type="text/css" media="all" />
 
   <link rel="icon" href="./images/favicon.svg" type="image/svg+xml">
 
@@ -361,17 +361,31 @@
         <div class="screen-parallax-bg" style="background-image: url(./images/layers/1/bg2.png);"></div>
         <div class="screen-parallax-layers">
           
-          <img src="./images/layers/2/dragonfly_1.png" alt="alt" class="layer-2-fly">
+          
           <img src="./images/layers/2/dragonfly_2.png" alt="alt" class="layer-2-minifly">
           <picture>
+            <source media="(min-width: 1025px)" srcset="./images/empty.png">
+            <img src="./images/layers/2/leafs-mobile.png" alt="alt" class="layer-2-leafs">
+          </picture>
+          <img src="./images/layers/2/dragonfly_1.png" alt="alt" class="layer-2-fly">
+          
+          <picture>
             <source media="(min-width: 1025px)" srcset="./images/layers/2/leafs.png">
-            <img src="./images/empty.png" alt="alt" class="layer-2-leafs">
+            <img src="./images/layers/2/leaf-1.png" alt="alt" class="layer-2-leaf-1">
           </picture>
           <picture>
-            <source media="(min-width: 1025px)" srcset="./images/layers/1/sun.png">
-            <img src="./images/layers/1/sun-micro.png" alt="alt" class="layer-2-sun">
+            <source media="(min-width: 1025px)" srcset="./images/layers/2/leafs.png">
+            <img src="./images/layers/2/leaf-2.png" alt="alt" class="layer-2-leaf-2">
           </picture>
-          <!-- <img src="./images/layers/1/sun.png" alt="alt" class="layer-2-sun"> -->
+          <picture>
+            <source media="(min-width: 1025px)" srcset="./images/layers/2/leafs.png">
+            <img src="./images/layers/2/leaf-3.png" alt="alt" class="layer-2-leaf-3">
+          </picture>
+
+          <picture>
+            <source media="(min-width: 1025px)" srcset="./images/layers/1/sun.png">
+            <img src="./images/empty.png" alt="alt" class="layer-2-sun">
+          </picture>
         </div>
       </div>
 
@@ -420,7 +434,6 @@
         <div class="screen-parallax-layers">
           
           <img src="./images/layers/3/leafs.png" alt="alt" class="layer-3-leafs">
-          <!-- <img src="./images/layers/3/mask.png" alt="alt" class="layer-3-mask"> -->
           <div class="layer-3-ff-left layer-ff">
             <picture>
               <source media="(min-width: 599px)" srcset="./images/layers/3/ff-left.png">
@@ -698,6 +711,6 @@
 <script src="./scripts/jquery.min.js"></script>
 <script src="./scripts/jquery.validate.min.js"></script>
 <script src="./scripts/imask.min.js"></script>
-<script src="./scripts/scripts.js?ver=1.10"></script>
+<script src="./scripts/scripts.js?ver=1.16"></script>
 </body>
 </html>

@@ -1,3 +1,6 @@
+:root {
+  --avh: calc((100vh + 120px) / 100);
+}
 .screens {
   @media (min-width: 1024.99px) {
     max-height: 100vh;
@@ -223,7 +226,7 @@
     right: 0;
     bottom: 0;
     transform-style: preserve-3d;
-    backface-visibility: hidden;
+    // backface-visibility: hidden;
 
     @media (min-width: 1025px) {
       will-change: transform;
@@ -281,7 +284,7 @@
       z-index: -8;
       max-width: none;
       pointer-events: none;
-      backface-visibility: hidden;
+      // backface-visibility: hidden;
       // will-change: transform;
     }
   }
@@ -331,6 +334,8 @@
   }
 
   @media (max-width: 1024.99px) {
+    perspective: 1200px;
+
     &-content {
       padding-right: 0;
     }
@@ -374,9 +379,6 @@
   }
 
   @media (max-width: 599px) {
-    &-logo {
-      // margin-bottom: 30px;
-    }
     
     &-title {
       @include fz(36);
@@ -389,7 +391,6 @@
 
   @media (max-width: 480px) {
     &-title {
-      // @include fz(32);
       font-size: 6.6vw;
     }
   }
@@ -429,10 +430,6 @@
 .screen.is-moving {
   .screen-parallax-hint {
     opacity: 0;
-
-    // .sprite {
-    //   animation: none;
-    // }
   }
 }
 
@@ -452,8 +449,6 @@
     top: 0;
     width: 100%;
     z-index: 0;
-    // animation-name: fireflies;
-    // animation-iteration-count: infinite;
   }
 }
 
@@ -473,63 +468,52 @@
     transform: translate3d(2%, 0, 80px) rotate3d(-1,0,0,25deg);
   }
 }
-// @keyframes bird {
-//   50% {
-//     transform: translate3d(-1%, -1%, 150px) rotateZ(-1.5deg);
-//   }
-// }
 @keyframes leaf1 {
   0% {
     opacity: 0;
-    // transform: rotate3d(0, 1, 0, 90deg);
     transform: translate3d(-150vw, -100%, 10px) rotate3d(0, 0, 1, 0deg);
   }
   1% {
     opacity: 1;
-    transform: translate3d(0, 0vh, 10px) rotate3d(0, 0, 1, 1deg);
+    transform: translate3d(0, calc(var(--avh) * 0), 10px) rotate3d(0, 0, 1, 1deg);
   }
-  // 2% {
-  //   opacity: 1;
-  //   transform: translate3d(0, 0vh, 10px) rotate3d(0, 0, 1, 1deg);
-  // }
   33% {
-    transform: translate3d(-17px, 37vh, 10px) rotate3d(0, 0, 1, 40deg);
+    transform: translate3d(-17px, calc(var(--avh) * 37), 10px) rotate3d(0, 0, 1, 40deg);
   }
   66% {
-    transform: translate3d(24px, 72vh, 10px) rotate3d(0, 0, 1, -34deg);
+    transform: translate3d(24px, calc(var(--avh) * 72), 10px) rotate3d(0, 0, 1, -34deg);
   }
   99% {
-    transform: translate3d(-7px, 112vh, 10px) rotate3d(0, 0, 1, 19deg);
+    transform: translate3d(-7px, calc(var(--avh) * 112), 10px) rotate3d(0, 0, 1, 19deg);
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate3d(-150vw, 113vh, 10px);
+    transform: translate3d(-150vw, calc(var(--avh) * 113), 10px);
   }
 }
 @keyframes leaf2 {
   0% {
     opacity: 0;
-    // transform: rotate3d(0, 1, 0, 90deg);
     transform: translate3d(-150vw, -100%, -40px) rotate3d(0, 0, 1, 0deg);
   }
   1% {
     opacity: 1;
-    transform: translate3d(0, 0vh, -40px) rotate3d(0, 0, 1, 1deg);
+    transform: translate3d(0, 0, -40px) rotate3d(0, 0, 1, 1deg);
   }
   33% {
-    transform: translate3d(35px, 35vh, -40px) rotate3d(0, 0, 1, -17deg);
+    transform: translate3d(35px, calc(var(--avh) * 35), -40px) rotate3d(0, 0, 1, -17deg);
   }
   66% {
-    transform: translate3d(-21px, 74vh, -40px) rotate3d(0, 0, 1, 15deg);
+    transform: translate3d(-21px, calc(var(--avh) * 74), -40px) rotate3d(0, 0, 1, 15deg);
   }
   99% {
-    transform: translate3d(22px, 112vh, -40px) rotate3d(0, 0, 1, -9deg);
+    transform: translate3d(22px, calc(var(--avh) * 112), -40px) rotate3d(0, 0, 1, -9deg);
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: translate3d(-150vw, 113vh, -40px);
+    transform: translate3d(-150vw, calc(var(--avh) * 113), -40px);
   }
 }
 
@@ -560,6 +544,12 @@
     transform: translateZ(110px);
   }
 
+  .screen-parallax-2 .screen-parallax-layers:after {
+    background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%);
+    bottom: auto;
+    height: 25%;
+  }
+
   .screen-parallax-1 {
     .screen-parallax-bg {
       left: -20vw;
@@ -575,21 +565,36 @@
       right: -15vw;
       top: -10vh;
       bottom: -10vh;
-      transform: translateZ(calc(-140px * var(--screen-1-progress))) scale(1.1);
+      transform: translateZ(calc(-250px * var(--screen-1-progress))) scale(1.1);
     }
   }
   .screen-parallax-3 {
     .screen-parallax-bg {
-      left: -15vw;
-      right: -15vw;
-      top: -10vh;
-      bottom: -10vh;
-      transform: translateZ(calc(-140px * var(--screen-2-progress))) scale(1.1) rotateY(calc(var(--screen-2-progress)*12deg));
+      left: -20vw;
+      right: -20vw;
+      top: -20vh;
+      bottom: -20vh;
+      transform: translateZ(calc(-300px * var(--screen-2-progress))) scale(1.1) rotateY(calc(var(--screen-2-progress)*8deg));
     }
   }
 
   .m-active.screen-parallax {
     .layer-1 {
+      &-leafsleft {
+        filter: blur(calc(1.5px * var(--screen-0-progress))) drop-shadow(2px 4px calc(10px + 55px * var(--screen-0-progress)) #000);
+        transform: translateZ(100px) translateX(calc(var(--screen-0-progress)*20%)) scale(calc(1 - var(--screen-0-progress)*0.2));
+      }
+      &-leafsright {
+        transform: translateZ(60px) translateX(calc(var(--screen-0-progress)*(-30%))) scale(calc(1 - var(--screen-0-progress)*0.2));
+        filter: blur(calc(2.4px * var(--screen-0-progress))) drop-shadow(-2px 4px calc(10px + 65px * var(--screen-0-progress)) #000);
+      }
+      &-bird {
+        transform: translateZ(150px) translateY(calc(var(--screen-0-progress)*(-25vh))) rotateZ(calc(var(--screen-0-progress)*9deg)) scale(calc(1 + var(--screen-0-progress)*0.25));
+        filter: drop-shadow(0px -5px 70px #000);
+      }
+      &-sun {
+        transform: translate3d(-50%,0,150px) rotateZ(calc(15deg - var(--screen-0-progress)*(-25deg)));
+      }
       &-leaf-1 {
         animation: leaf1 22s infinite linear;
       }
@@ -604,7 +609,28 @@
       }
     }
 
+    .layer-2 {
+      &-fly {
+        transform: translateZ(100px) translateY(calc(var(--screen-1-progress)*(-20vh))) rotateZ(calc(var(--screen-1-progress)*10deg)) scale(calc(1 + var(--screen-1-progress)*0.2));
+      }
+      &-minifly {
+        transform: translate3d(calc(var(--screen-1-progress)*(-25vw)), calc(var(--screen-1-progress)*(-7vh)), 180px) rotateZ(calc(var(--screen-1-progress)*(25deg))) scale(calc(1 - var(--screen-1-progress)*0.2));
+      }
+      &-leaf-1 {
+        animation: leaf1 24s infinite linear;
+      }
+      &-leaf-2 {
+        animation: leaf2 26s 5s infinite linear;
+      }
+      &-leaf-3 {
+        animation: leaf1 27s 9s infinite linear;
+      }
+    }
+
     .layer-3 {
+      &-leafs {
+        transform: translateZ(100px) translateY(calc(var(--screen-2-progress)*(-10vh)));
+      }
       &-ff-left {
         animation: orbit2 20s infinite ease-in-out;
   
@@ -635,27 +661,15 @@
     &-smog {
       display: none;
       visibility: hidden;
-      // left: 0;
-      // top: 0;
-      // width: 100%;
-      // height: 100%;
-      // object-fit: 200%;
-      // object-position: center;
-      // transform: translateZ(100px) translateY(calc(var(--screen-0-progress)*5vh)) scale(calc(1 + var(--screen-0-progress)*0.85));
-      display: none;
-      visibility: hidden;
     }
     &-leafsleft {
       max-width: 80% !important;
       z-index: -9 !important;
       left: -20%;
       top: 28%;
-      // transform-origin: left center;
-      // transform: translateZ(80px) translateX(calc(var(--screen-0-progress)*20%)) scale(calc(1 - var(--screen-1-progress)*0.2));
-      filter: blur(calc(1.5px * var(--screen-0-progress))) drop-shadow(2px 4px calc(10px + 55px * var(--screen-0-progress)) #000);
-      transform: translateZ(100px) translateX(calc(var(--screen-0-progress)*20%)) scale(calc(1 - var(--screen-0-progress)*0.2));
-      will-change: transform, filter;
-      // animation: leafsleft 12s alternate infinite linear;
+      // filter: blur(calc(1.5px * var(--screen-0-progress))) drop-shadow(2px 4px calc(10px + 55px * var(--screen-0-progress)) #000);
+      // transform: translateZ(100px) translateX(calc(var(--screen-0-progress)*20%)) scale(calc(1 - var(--screen-0-progress)*0.2));
+      will-change: transform, filter !important;
     }
     &-leafsright {
       max-width: 85% !important;
@@ -663,22 +677,18 @@
       top: 0;
       bottom: 0;
       margin: auto 0;
-      z-index: -9 !important;;
-      // transform-origin: right center;
-      // animation: leafsright 10s alternate infinite linear;
-      // transform: translateZ(80px);
-      transform: translateZ(60px) translateX(calc(var(--screen-0-progress)*(-30%))) scale(calc(1 - var(--screen-0-progress)*0.2));
-      filter: blur(calc(2.4px * var(--screen-0-progress))) drop-shadow(-2px 4px calc(10px + 65px * var(--screen-0-progress)) #000);
-      will-change: transform, filter;
+      z-index: -9 !important;
+      // transform: translateZ(60px) translateX(calc(var(--screen-0-progress)*(-30%))) scale(calc(1 - var(--screen-0-progress)*0.2));
+      // filter: blur(calc(2.4px * var(--screen-0-progress))) drop-shadow(-2px 4px calc(10px + 65px * var(--screen-0-progress)) #000);
+      will-change: transform, filter !important;
     }
     &-bird {
       right: 0;
       bottom: -20%;
       width: 70%;
-      transform: translateZ(150px) translateY(calc(var(--screen-0-progress)*(-25vh))) rotateZ(calc(var(--screen-0-progress)*9deg)) scale(calc(1 + var(--screen-0-progress)*0.25));
-      // animation: orbit 12s infinite linear;
       z-index: -8 !important;
-      filter: drop-shadow(0px -5px 70px #000);
+      // transform: translateZ(150px) translateY(calc(var(--screen-0-progress)*(-25vh))) rotateZ(calc(var(--screen-0-progress)*9deg)) scale(calc(1 + var(--screen-0-progress)*0.25));
+      // filter: drop-shadow(0px -5px 70px #000);
     }
     
     &-sun {
@@ -686,59 +696,50 @@
       bottom: 0;
       width: auto;
       height: 230vh;
-      transform: translate3d(-50%,0,150px) rotateZ(calc(15deg - var(--screen-0-progress)*(-25deg)));
-      // animation: rays 60s infinite linear;
+      // transform: translate3d(-50%,0,150px) rotateZ(calc(15deg - var(--screen-0-progress)*(-25deg)));
       z-index: -8 !important;
-      // transform-origin: center top;
-
-      // left: 50%;
-      // bottom: 0;
-      // width: auto;
-      // height: 120vh;
-      // transform: translate3d(-50%,0,120px) rotateZ(calc(25deg - var(--screen-0-progress)*35deg));
-      // transform-origin: center top;
-      // z-index: -8 !important;
     }
 
     &-leaf-1 {
       left: 15%;
       top: -100px;
-      // animation: leaf1 22s infinite linear;
       z-index: -9 !important;
     }
     &-leaf-2 {
       right: 5%;
       top: -100px;
-      // animation: leaf2 23s 3s infinite linear;
       z-index: -7 !important;
       filter: drop-shadow(-3px 4px 35px #000);
     }
     &-leaf-3 {
       top: -100px;
       left: -10%;
-      // animation: leaf2 25s 7s infinite linear;
-      // z-index: -9 !important;
       filter: drop-shadow(3px 3px 30px #000);
     }
     &-leaf-4 {
       top: -100px;
       right: 25%;
-      // animation: leaf1 26s 12s infinite linear;
       z-index: -9 !important;
     }
   }
   
   .layer-2 {
-    &-leafs {
+    &-sun {
       display: none;
+      visibility: hidden;
+    }
+    &-leafs {
+      right: -2%;
+      top: 25%;
+      width: 80%;
+      transform: translateZ(50px);
     }
     &-fly {
       right: -1%;
-      bottom: -16%;
+      bottom: -20%;
       max-width: 80% !important;
       width: 670px;
-      // transform: translateZ(80px);
-      transform: translateZ(100px) translateY(calc(var(--screen-1-progress)*(-16vh))) rotateZ(calc(var(--screen-1-progress)*10deg)) scale(calc(1 + var(--screen-1-progress)*0.15));
+      // transform: translateZ(100px) translateY(calc(var(--screen-1-progress)*(-20vh))) rotateZ(calc(var(--screen-1-progress)*10deg)) scale(calc(1 + var(--screen-1-progress)*0.2));
       z-index: -8 !important;
     }
     &-minifly {
@@ -746,11 +747,28 @@
       top: 38%;
       width: 320px;
       max-width: 50% !important;
-      // transform: translateZ(160px);
-      transform: translate3d(calc(var(--screen-1-progress)*(-25vw)), calc(var(--screen-1-progress)*(-7vh)), 180px) rotateZ(calc(var(--screen-1-progress)*(25deg))) scale(calc(1 - var(--screen-1-progress)*0.2));
+      // transform: translate3d(calc(var(--screen-1-progress)*(-25vw)), calc(var(--screen-1-progress)*(-7vh)), 180px) rotateZ(calc(var(--screen-1-progress)*(25deg))) scale(calc(1 - var(--screen-1-progress)*0.2));
       z-index: -8 !important;
     }
-    &-sun {
+    &-leaf-1 {
+      top: -120px;
+      right: 25%;
+      max-width: 33%;
+      filter: drop-shadow(-3px 3px 30px #000);
+    }
+    &-leaf-2 {
+      top: -120px;
+      right: 5%;
+      max-width: 32%;
+      z-index: -9 !important;
+    }
+    &-leaf-3 {
+      top: -120px;
+      left: 10%;
+      max-width: 33%;
+      z-index: -9 !important;
+    }
+    //&-sun {
       // left: 50%;
       // bottom: 0;
       // width: auto;
@@ -758,14 +776,14 @@
       // // transform: translateZ(150px) rotateZ(calc(var(--screen-0-progress)*45deg));
       // transform: translate3d(-50%,0,240px) rotateZ(calc(20deg - var(--screen-1-progress)*(-30deg)));
    
-      left: 50%;
-      bottom: 0;
-      width: auto;
-      height: 120vh;
-      transform: translate3d(-50%,0,240px) rotateZ(calc(-25deg + var(--screen-1-progress)*35deg));
-      transform-origin: center top;
-      z-index: -8 !important;
-    }
+      // left: 50%;
+      // bottom: 0;
+      // width: auto;
+      // height: 120vh;
+      // transform: translate3d(-50%,0,240px) rotateZ(calc(-25deg + var(--screen-1-progress)*35deg));
+      // transform-origin: center top;
+      // z-index: -8 !important;
+    //}
   }
 
   .layer-3 {
@@ -787,8 +805,7 @@
       bottom: 30%;
       left: -3%;
       width: 32%;
-      transform: translateZ(100px) translateY(calc(var(--screen-2-progress)*(-10vh)));
-      // transform: translateZ(100px) translateY(calc(var(--screen-2-progress)*(5vh))) scale(calc(1 - var(--screen-2-progress)*0.15));
+      transform: translateZ(100px);
     }
     &-ff-right {
       display: none;
@@ -798,7 +815,6 @@
       right: 52%;
       width: 600px;
       bottom: -2%;
-      // animation: orbit2 20s infinite ease-in-out;
 
       .layer-ff-light {
         // animation: fireflies 2.9s .1s infinite ease-in;
@@ -865,10 +881,6 @@
     img {
       max-width: 100%;
     }
-
-    // .layer-ff-light {
-    //   animation: fireflies 3.35s infinite ease-out;
-    // }
   }
   .layer-3-ff-left {
     display: none;
@@ -898,13 +910,14 @@
     right: -29%;
   }
   .layer-2-fly {
-    max-width: 100% !important;
+    max-width: 120% !important;
+    right: -18%;
   }
 }
 @media (max-width: 420px) {
   .layer-2-fly {
     right: -30%;
-    max-width: 130% !important;
+    max-width: 142% !important;
   }
   .layer-2-minifly {
     top: 35%;

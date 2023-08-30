@@ -11,12 +11,12 @@ const gulpif = require('gulp-if')
 
 function styles(cb) {
     return src('src/sass/style.scss')
-        .pipe(sourcemaps.init())
+        // .pipe(sourcemaps.init())
         .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
         .pipe(autoprefixer(
             ['last 4 versions']
         ))
-        .pipe(sourcemaps.write('sourcemaps'))
+        // .pipe(sourcemaps.write('sourcemaps'))
         .pipe(dest('src/css'))
     cb();
 }

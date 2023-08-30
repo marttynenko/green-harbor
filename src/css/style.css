@@ -2221,6 +2221,10 @@ span.invalid {
     max-width: 20%;
   }
 }
+:root {
+  --avh: calc((100vh + 120px) / 100);
+}
+
 @media (min-width: 1024.99px) {
   .screens {
     max-height: 100vh;
@@ -2437,8 +2441,6 @@ span.invalid {
   bottom: 0;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
 }
 @media (min-width: 1025px) {
   .screen-parallax-3d {
@@ -2493,8 +2495,6 @@ span.invalid {
   z-index: -8;
   max-width: none;
   pointer-events: none;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
 }
 .screen-parallax-hint {
   position: fixed;
@@ -2538,6 +2538,10 @@ span.invalid {
   }
 }
 @media (max-width: 1024.99px) {
+  .screen-parallax {
+    -webkit-perspective: 1200px;
+            perspective: 1200px;
+  }
   .screen-parallax-content {
     padding-right: 0;
   }
@@ -2687,26 +2691,26 @@ span.invalid {
   }
   1% {
     opacity: 1;
-    -webkit-transform: translate3d(0, 0vh, 10px) rotate3d(0, 0, 1, 1deg);
-            transform: translate3d(0, 0vh, 10px) rotate3d(0, 0, 1, 1deg);
+    -webkit-transform: translate3d(0, calc(var(--avh) * 0), 10px) rotate3d(0, 0, 1, 1deg);
+            transform: translate3d(0, calc(var(--avh) * 0), 10px) rotate3d(0, 0, 1, 1deg);
   }
   33% {
-    -webkit-transform: translate3d(-17px, 37vh, 10px) rotate3d(0, 0, 1, 40deg);
-            transform: translate3d(-17px, 37vh, 10px) rotate3d(0, 0, 1, 40deg);
+    -webkit-transform: translate3d(-17px, calc(var(--avh) * 37), 10px) rotate3d(0, 0, 1, 40deg);
+            transform: translate3d(-17px, calc(var(--avh) * 37), 10px) rotate3d(0, 0, 1, 40deg);
   }
   66% {
-    -webkit-transform: translate3d(24px, 72vh, 10px) rotate3d(0, 0, 1, -34deg);
-            transform: translate3d(24px, 72vh, 10px) rotate3d(0, 0, 1, -34deg);
+    -webkit-transform: translate3d(24px, calc(var(--avh) * 72), 10px) rotate3d(0, 0, 1, -34deg);
+            transform: translate3d(24px, calc(var(--avh) * 72), 10px) rotate3d(0, 0, 1, -34deg);
   }
   99% {
-    -webkit-transform: translate3d(-7px, 112vh, 10px) rotate3d(0, 0, 1, 19deg);
-            transform: translate3d(-7px, 112vh, 10px) rotate3d(0, 0, 1, 19deg);
+    -webkit-transform: translate3d(-7px, calc(var(--avh) * 112), 10px) rotate3d(0, 0, 1, 19deg);
+            transform: translate3d(-7px, calc(var(--avh) * 112), 10px) rotate3d(0, 0, 1, 19deg);
     opacity: 1;
   }
   100% {
     opacity: 0;
-    -webkit-transform: translate3d(-150vw, 113vh, 10px);
-            transform: translate3d(-150vw, 113vh, 10px);
+    -webkit-transform: translate3d(-150vw, calc(var(--avh) * 113), 10px);
+            transform: translate3d(-150vw, calc(var(--avh) * 113), 10px);
   }
 }
 @keyframes leaf1 {
@@ -2717,26 +2721,26 @@ span.invalid {
   }
   1% {
     opacity: 1;
-    -webkit-transform: translate3d(0, 0vh, 10px) rotate3d(0, 0, 1, 1deg);
-            transform: translate3d(0, 0vh, 10px) rotate3d(0, 0, 1, 1deg);
+    -webkit-transform: translate3d(0, calc(var(--avh) * 0), 10px) rotate3d(0, 0, 1, 1deg);
+            transform: translate3d(0, calc(var(--avh) * 0), 10px) rotate3d(0, 0, 1, 1deg);
   }
   33% {
-    -webkit-transform: translate3d(-17px, 37vh, 10px) rotate3d(0, 0, 1, 40deg);
-            transform: translate3d(-17px, 37vh, 10px) rotate3d(0, 0, 1, 40deg);
+    -webkit-transform: translate3d(-17px, calc(var(--avh) * 37), 10px) rotate3d(0, 0, 1, 40deg);
+            transform: translate3d(-17px, calc(var(--avh) * 37), 10px) rotate3d(0, 0, 1, 40deg);
   }
   66% {
-    -webkit-transform: translate3d(24px, 72vh, 10px) rotate3d(0, 0, 1, -34deg);
-            transform: translate3d(24px, 72vh, 10px) rotate3d(0, 0, 1, -34deg);
+    -webkit-transform: translate3d(24px, calc(var(--avh) * 72), 10px) rotate3d(0, 0, 1, -34deg);
+            transform: translate3d(24px, calc(var(--avh) * 72), 10px) rotate3d(0, 0, 1, -34deg);
   }
   99% {
-    -webkit-transform: translate3d(-7px, 112vh, 10px) rotate3d(0, 0, 1, 19deg);
-            transform: translate3d(-7px, 112vh, 10px) rotate3d(0, 0, 1, 19deg);
+    -webkit-transform: translate3d(-7px, calc(var(--avh) * 112), 10px) rotate3d(0, 0, 1, 19deg);
+            transform: translate3d(-7px, calc(var(--avh) * 112), 10px) rotate3d(0, 0, 1, 19deg);
     opacity: 1;
   }
   100% {
     opacity: 0;
-    -webkit-transform: translate3d(-150vw, 113vh, 10px);
-            transform: translate3d(-150vw, 113vh, 10px);
+    -webkit-transform: translate3d(-150vw, calc(var(--avh) * 113), 10px);
+            transform: translate3d(-150vw, calc(var(--avh) * 113), 10px);
   }
 }
 @-webkit-keyframes leaf2 {
@@ -2747,26 +2751,26 @@ span.invalid {
   }
   1% {
     opacity: 1;
-    -webkit-transform: translate3d(0, 0vh, -40px) rotate3d(0, 0, 1, 1deg);
-            transform: translate3d(0, 0vh, -40px) rotate3d(0, 0, 1, 1deg);
+    -webkit-transform: translate3d(0, 0, -40px) rotate3d(0, 0, 1, 1deg);
+            transform: translate3d(0, 0, -40px) rotate3d(0, 0, 1, 1deg);
   }
   33% {
-    -webkit-transform: translate3d(35px, 35vh, -40px) rotate3d(0, 0, 1, -17deg);
-            transform: translate3d(35px, 35vh, -40px) rotate3d(0, 0, 1, -17deg);
+    -webkit-transform: translate3d(35px, calc(var(--avh) * 35), -40px) rotate3d(0, 0, 1, -17deg);
+            transform: translate3d(35px, calc(var(--avh) * 35), -40px) rotate3d(0, 0, 1, -17deg);
   }
   66% {
-    -webkit-transform: translate3d(-21px, 74vh, -40px) rotate3d(0, 0, 1, 15deg);
-            transform: translate3d(-21px, 74vh, -40px) rotate3d(0, 0, 1, 15deg);
+    -webkit-transform: translate3d(-21px, calc(var(--avh) * 74), -40px) rotate3d(0, 0, 1, 15deg);
+            transform: translate3d(-21px, calc(var(--avh) * 74), -40px) rotate3d(0, 0, 1, 15deg);
   }
   99% {
-    -webkit-transform: translate3d(22px, 112vh, -40px) rotate3d(0, 0, 1, -9deg);
-            transform: translate3d(22px, 112vh, -40px) rotate3d(0, 0, 1, -9deg);
+    -webkit-transform: translate3d(22px, calc(var(--avh) * 112), -40px) rotate3d(0, 0, 1, -9deg);
+            transform: translate3d(22px, calc(var(--avh) * 112), -40px) rotate3d(0, 0, 1, -9deg);
     opacity: 1;
   }
   100% {
     opacity: 0;
-    -webkit-transform: translate3d(-150vw, 113vh, -40px);
-            transform: translate3d(-150vw, 113vh, -40px);
+    -webkit-transform: translate3d(-150vw, calc(var(--avh) * 113), -40px);
+            transform: translate3d(-150vw, calc(var(--avh) * 113), -40px);
   }
 }
 @keyframes leaf2 {
@@ -2777,26 +2781,26 @@ span.invalid {
   }
   1% {
     opacity: 1;
-    -webkit-transform: translate3d(0, 0vh, -40px) rotate3d(0, 0, 1, 1deg);
-            transform: translate3d(0, 0vh, -40px) rotate3d(0, 0, 1, 1deg);
+    -webkit-transform: translate3d(0, 0, -40px) rotate3d(0, 0, 1, 1deg);
+            transform: translate3d(0, 0, -40px) rotate3d(0, 0, 1, 1deg);
   }
   33% {
-    -webkit-transform: translate3d(35px, 35vh, -40px) rotate3d(0, 0, 1, -17deg);
-            transform: translate3d(35px, 35vh, -40px) rotate3d(0, 0, 1, -17deg);
+    -webkit-transform: translate3d(35px, calc(var(--avh) * 35), -40px) rotate3d(0, 0, 1, -17deg);
+            transform: translate3d(35px, calc(var(--avh) * 35), -40px) rotate3d(0, 0, 1, -17deg);
   }
   66% {
-    -webkit-transform: translate3d(-21px, 74vh, -40px) rotate3d(0, 0, 1, 15deg);
-            transform: translate3d(-21px, 74vh, -40px) rotate3d(0, 0, 1, 15deg);
+    -webkit-transform: translate3d(-21px, calc(var(--avh) * 74), -40px) rotate3d(0, 0, 1, 15deg);
+            transform: translate3d(-21px, calc(var(--avh) * 74), -40px) rotate3d(0, 0, 1, 15deg);
   }
   99% {
-    -webkit-transform: translate3d(22px, 112vh, -40px) rotate3d(0, 0, 1, -9deg);
-            transform: translate3d(22px, 112vh, -40px) rotate3d(0, 0, 1, -9deg);
+    -webkit-transform: translate3d(22px, calc(var(--avh) * 112), -40px) rotate3d(0, 0, 1, -9deg);
+            transform: translate3d(22px, calc(var(--avh) * 112), -40px) rotate3d(0, 0, 1, -9deg);
     opacity: 1;
   }
   100% {
     opacity: 0;
-    -webkit-transform: translate3d(-150vw, 113vh, -40px);
-            transform: translate3d(-150vw, 113vh, -40px);
+    -webkit-transform: translate3d(-150vw, calc(var(--avh) * 113), -40px);
+            transform: translate3d(-150vw, calc(var(--avh) * 113), -40px);
   }
 }
 @media (max-width: 1024.99px) {
@@ -2826,6 +2830,13 @@ span.invalid {
             transform: translateZ(110px);
   }
 
+  .screen-parallax-2 .screen-parallax-layers:after {
+    background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.7)));
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+    bottom: auto;
+    height: 25%;
+  }
+
   .screen-parallax-1 .screen-parallax-bg {
     left: -20vw;
     right: -20vw;
@@ -2840,19 +2851,41 @@ span.invalid {
     right: -15vw;
     top: -10vh;
     bottom: -10vh;
-    -webkit-transform: translateZ(calc(-140px * var(--screen-1-progress))) scale(1.1);
-            transform: translateZ(calc(-140px * var(--screen-1-progress))) scale(1.1);
+    -webkit-transform: translateZ(calc(-250px * var(--screen-1-progress))) scale(1.1);
+            transform: translateZ(calc(-250px * var(--screen-1-progress))) scale(1.1);
   }
 
   .screen-parallax-3 .screen-parallax-bg {
-    left: -15vw;
-    right: -15vw;
-    top: -10vh;
-    bottom: -10vh;
-    -webkit-transform: translateZ(calc(-140px * var(--screen-2-progress))) scale(1.1) rotateY(calc(var(--screen-2-progress)*12deg));
-            transform: translateZ(calc(-140px * var(--screen-2-progress))) scale(1.1) rotateY(calc(var(--screen-2-progress)*12deg));
+    left: -20vw;
+    right: -20vw;
+    top: -20vh;
+    bottom: -20vh;
+    -webkit-transform: translateZ(calc(-300px * var(--screen-2-progress))) scale(1.1) rotateY(calc(var(--screen-2-progress)*8deg));
+            transform: translateZ(calc(-300px * var(--screen-2-progress))) scale(1.1) rotateY(calc(var(--screen-2-progress)*8deg));
   }
 
+  .m-active.screen-parallax .layer-1-leafsleft {
+    -webkit-filter: blur(calc(1.5px * var(--screen-0-progress))) drop-shadow(2px 4px calc(10px + 55px * var(--screen-0-progress)) #000);
+            filter: blur(calc(1.5px * var(--screen-0-progress))) drop-shadow(2px 4px calc(10px + 55px * var(--screen-0-progress)) #000);
+    -webkit-transform: translateZ(100px) translateX(calc(var(--screen-0-progress)*20%)) scale(calc(1 - var(--screen-0-progress)*0.2));
+            transform: translateZ(100px) translateX(calc(var(--screen-0-progress)*20%)) scale(calc(1 - var(--screen-0-progress)*0.2));
+  }
+  .m-active.screen-parallax .layer-1-leafsright {
+    -webkit-transform: translateZ(60px) translateX(calc(var(--screen-0-progress)*(-30%))) scale(calc(1 - var(--screen-0-progress)*0.2));
+            transform: translateZ(60px) translateX(calc(var(--screen-0-progress)*(-30%))) scale(calc(1 - var(--screen-0-progress)*0.2));
+    -webkit-filter: blur(calc(2.4px * var(--screen-0-progress))) drop-shadow(-2px 4px calc(10px + 65px * var(--screen-0-progress)) #000);
+            filter: blur(calc(2.4px * var(--screen-0-progress))) drop-shadow(-2px 4px calc(10px + 65px * var(--screen-0-progress)) #000);
+  }
+  .m-active.screen-parallax .layer-1-bird {
+    -webkit-transform: translateZ(150px) translateY(calc(var(--screen-0-progress)*(-25vh))) rotateZ(calc(var(--screen-0-progress)*9deg)) scale(calc(1 + var(--screen-0-progress)*0.25));
+            transform: translateZ(150px) translateY(calc(var(--screen-0-progress)*(-25vh))) rotateZ(calc(var(--screen-0-progress)*9deg)) scale(calc(1 + var(--screen-0-progress)*0.25));
+    -webkit-filter: drop-shadow(0px -5px 70px #000);
+            filter: drop-shadow(0px -5px 70px #000);
+  }
+  .m-active.screen-parallax .layer-1-sun {
+    -webkit-transform: translate3d(-50%, 0, 150px) rotateZ(calc(15deg - var(--screen-0-progress)*(-25deg)));
+            transform: translate3d(-50%, 0, 150px) rotateZ(calc(15deg - var(--screen-0-progress)*(-25deg)));
+  }
   .m-active.screen-parallax .layer-1-leaf-1 {
     -webkit-animation: leaf1 22s infinite linear;
             animation: leaf1 22s infinite linear;
@@ -2868,6 +2901,30 @@ span.invalid {
   .m-active.screen-parallax .layer-1-leaf-4 {
     -webkit-animation: leaf1 26s 12s infinite linear;
             animation: leaf1 26s 12s infinite linear;
+  }
+  .m-active.screen-parallax .layer-2-fly {
+    -webkit-transform: translateZ(100px) translateY(calc(var(--screen-1-progress)*(-20vh))) rotateZ(calc(var(--screen-1-progress)*10deg)) scale(calc(1 + var(--screen-1-progress)*0.2));
+            transform: translateZ(100px) translateY(calc(var(--screen-1-progress)*(-20vh))) rotateZ(calc(var(--screen-1-progress)*10deg)) scale(calc(1 + var(--screen-1-progress)*0.2));
+  }
+  .m-active.screen-parallax .layer-2-minifly {
+    -webkit-transform: translate3d(calc(var(--screen-1-progress)*(-25vw)), calc(var(--screen-1-progress)*(-7vh)), 180px) rotateZ(calc(var(--screen-1-progress)*(25deg))) scale(calc(1 - var(--screen-1-progress)*0.2));
+            transform: translate3d(calc(var(--screen-1-progress)*(-25vw)), calc(var(--screen-1-progress)*(-7vh)), 180px) rotateZ(calc(var(--screen-1-progress)*(25deg))) scale(calc(1 - var(--screen-1-progress)*0.2));
+  }
+  .m-active.screen-parallax .layer-2-leaf-1 {
+    -webkit-animation: leaf1 24s infinite linear;
+            animation: leaf1 24s infinite linear;
+  }
+  .m-active.screen-parallax .layer-2-leaf-2 {
+    -webkit-animation: leaf2 26s 5s infinite linear;
+            animation: leaf2 26s 5s infinite linear;
+  }
+  .m-active.screen-parallax .layer-2-leaf-3 {
+    -webkit-animation: leaf1 27s 9s infinite linear;
+            animation: leaf1 27s 9s infinite linear;
+  }
+  .m-active.screen-parallax .layer-3-leafs {
+    -webkit-transform: translateZ(100px) translateY(calc(var(--screen-2-progress)*(-10vh)));
+            transform: translateZ(100px) translateY(calc(var(--screen-2-progress)*(-10vh)));
   }
   .m-active.screen-parallax .layer-3-ff-left {
     -webkit-animation: orbit2 20s infinite ease-in-out;
@@ -2897,19 +2954,13 @@ span.invalid {
   .layer-1-vinetka, .layer-1-smog {
     display: none;
     visibility: hidden;
-    display: none;
-    visibility: hidden;
   }
   .layer-1-leafsleft {
     max-width: 80% !important;
     z-index: -9 !important;
     left: -20%;
     top: 28%;
-    -webkit-filter: blur(calc(1.5px * var(--screen-0-progress))) drop-shadow(2px 4px calc(10px + 55px * var(--screen-0-progress)) #000);
-            filter: blur(calc(1.5px * var(--screen-0-progress))) drop-shadow(2px 4px calc(10px + 55px * var(--screen-0-progress)) #000);
-    -webkit-transform: translateZ(100px) translateX(calc(var(--screen-0-progress)*20%)) scale(calc(1 - var(--screen-0-progress)*0.2));
-            transform: translateZ(100px) translateX(calc(var(--screen-0-progress)*20%)) scale(calc(1 - var(--screen-0-progress)*0.2));
-    will-change: transform, filter;
+    will-change: transform, filter !important;
   }
   .layer-1-leafsright {
     max-width: 85% !important;
@@ -2918,29 +2969,19 @@ span.invalid {
     bottom: 0;
     margin: auto 0;
     z-index: -9 !important;
-    -webkit-transform: translateZ(60px) translateX(calc(var(--screen-0-progress)*(-30%))) scale(calc(1 - var(--screen-0-progress)*0.2));
-            transform: translateZ(60px) translateX(calc(var(--screen-0-progress)*(-30%))) scale(calc(1 - var(--screen-0-progress)*0.2));
-    -webkit-filter: blur(calc(2.4px * var(--screen-0-progress))) drop-shadow(-2px 4px calc(10px + 65px * var(--screen-0-progress)) #000);
-            filter: blur(calc(2.4px * var(--screen-0-progress))) drop-shadow(-2px 4px calc(10px + 65px * var(--screen-0-progress)) #000);
-    will-change: transform, filter;
+    will-change: transform, filter !important;
   }
   .layer-1-bird {
     right: 0;
     bottom: -20%;
     width: 70%;
-    -webkit-transform: translateZ(150px) translateY(calc(var(--screen-0-progress)*(-25vh))) rotateZ(calc(var(--screen-0-progress)*9deg)) scale(calc(1 + var(--screen-0-progress)*0.25));
-            transform: translateZ(150px) translateY(calc(var(--screen-0-progress)*(-25vh))) rotateZ(calc(var(--screen-0-progress)*9deg)) scale(calc(1 + var(--screen-0-progress)*0.25));
     z-index: -8 !important;
-    -webkit-filter: drop-shadow(0px -5px 70px #000);
-            filter: drop-shadow(0px -5px 70px #000);
   }
   .layer-1-sun {
     left: 50%;
     bottom: 0;
     width: auto;
     height: 230vh;
-    -webkit-transform: translate3d(-50%, 0, 150px) rotateZ(calc(15deg - var(--screen-0-progress)*(-25deg)));
-            transform: translate3d(-50%, 0, 150px) rotateZ(calc(15deg - var(--screen-0-progress)*(-25deg)));
     z-index: -8 !important;
   }
   .layer-1-leaf-1 {
@@ -2967,16 +3008,22 @@ span.invalid {
     z-index: -9 !important;
   }
 
-  .layer-2-leafs {
+  .layer-2-sun {
     display: none;
+    visibility: hidden;
+  }
+  .layer-2-leafs {
+    right: -2%;
+    top: 25%;
+    width: 80%;
+    -webkit-transform: translateZ(50px);
+            transform: translateZ(50px);
   }
   .layer-2-fly {
     right: -1%;
-    bottom: -16%;
+    bottom: -20%;
     max-width: 80% !important;
     width: 670px;
-    -webkit-transform: translateZ(100px) translateY(calc(var(--screen-1-progress)*(-16vh))) rotateZ(calc(var(--screen-1-progress)*10deg)) scale(calc(1 + var(--screen-1-progress)*0.15));
-            transform: translateZ(100px) translateY(calc(var(--screen-1-progress)*(-16vh))) rotateZ(calc(var(--screen-1-progress)*10deg)) scale(calc(1 + var(--screen-1-progress)*0.15));
     z-index: -8 !important;
   }
   .layer-2-minifly {
@@ -2984,21 +3031,26 @@ span.invalid {
     top: 38%;
     width: 320px;
     max-width: 50% !important;
-    -webkit-transform: translate3d(calc(var(--screen-1-progress)*(-25vw)), calc(var(--screen-1-progress)*(-7vh)), 180px) rotateZ(calc(var(--screen-1-progress)*(25deg))) scale(calc(1 - var(--screen-1-progress)*0.2));
-            transform: translate3d(calc(var(--screen-1-progress)*(-25vw)), calc(var(--screen-1-progress)*(-7vh)), 180px) rotateZ(calc(var(--screen-1-progress)*(25deg))) scale(calc(1 - var(--screen-1-progress)*0.2));
     z-index: -8 !important;
   }
-  .layer-2-sun {
-    left: 50%;
-    bottom: 0;
-    width: auto;
-    height: 120vh;
-    -webkit-transform: translate3d(-50%, 0, 240px) rotateZ(calc(-25deg + var(--screen-1-progress)*35deg));
-            transform: translate3d(-50%, 0, 240px) rotateZ(calc(-25deg + var(--screen-1-progress)*35deg));
-    -webkit-transform-origin: center top;
-        -ms-transform-origin: center top;
-            transform-origin: center top;
-    z-index: -8 !important;
+  .layer-2-leaf-1 {
+    top: -120px;
+    right: 25%;
+    max-width: 33%;
+    -webkit-filter: drop-shadow(-3px 3px 30px #000);
+            filter: drop-shadow(-3px 3px 30px #000);
+  }
+  .layer-2-leaf-2 {
+    top: -120px;
+    right: 5%;
+    max-width: 32%;
+    z-index: -9 !important;
+  }
+  .layer-2-leaf-3 {
+    top: -120px;
+    left: 10%;
+    max-width: 33%;
+    z-index: -9 !important;
   }
 
   .layer-3-moon {
@@ -3022,8 +3074,8 @@ span.invalid {
     bottom: 30%;
     left: -3%;
     width: 32%;
-    -webkit-transform: translateZ(100px) translateY(calc(var(--screen-2-progress)*(-10vh)));
-            transform: translateZ(100px) translateY(calc(var(--screen-2-progress)*(-10vh)));
+    -webkit-transform: translateZ(100px);
+            transform: translateZ(100px);
   }
   .layer-3-ff-right {
     display: none;
@@ -3114,13 +3166,14 @@ span.invalid {
   }
 
   .layer-2-fly {
-    max-width: 100% !important;
+    max-width: 120% !important;
+    right: -18%;
   }
 }
 @media (max-width: 420px) {
   .layer-2-fly {
     right: -30%;
-    max-width: 130% !important;
+    max-width: 142% !important;
   }
 
   .layer-2-minifly {
@@ -4294,4 +4347,3 @@ span.invalid {
     font-size: 1rem;
   }
 }
-/*# sourceMappingURL=sourcemaps/style.css.map */
