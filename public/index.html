@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <!-- <meta name="viewport" content="width=1024"> -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Зеленая гавань</title>
   <meta name="keywords" content="Зеленая гавань" />
@@ -61,8 +60,6 @@
       animation: none;
       display: none;
     }
-  </style>
-  <style>
     @font-face {
       font-family: 'CoFo Sans';
       src: url('./fonts/cofo/CoFoSans-Bold.eot');
@@ -370,15 +367,15 @@
           <img src="./images/layers/2/dragonfly_1.png" alt="alt" class="layer-2-fly">
           
           <picture>
-            <source media="(min-width: 1025px)" srcset="./images/layers/2/leafs.png">
+            <source media="(min-width: 1025px)" srcset="./images/empty.png">
             <img src="./images/layers/2/leaf-1.png" alt="alt" class="layer-2-leaf-1">
           </picture>
           <picture>
-            <source media="(min-width: 1025px)" srcset="./images/layers/2/leafs.png">
+            <source media="(min-width: 1025px)" srcset="./images/empty.png">
             <img src="./images/layers/2/leaf-2.png" alt="alt" class="layer-2-leaf-2">
           </picture>
           <picture>
-            <source media="(min-width: 1025px)" srcset="./images/layers/2/leafs.png">
+            <source media="(min-width: 1025px)" srcset="./images/empty.png">
             <img src="./images/layers/2/leaf-3.png" alt="alt" class="layer-2-leaf-3">
           </picture>
 
@@ -497,21 +494,21 @@
           <div class="cf-swiper-container">
             <div class="cf-swiper swiper">
               <div class="swiper-wrapper">
-                <div class="swiper-slide cf-swiper-slide" data-audio="./media/night.mp3">
+                <div class="swiper-slide cf-swiper-slide" >
                   <div class="cf-slide">
                     <img src="./images/cf/1_yoga.jpg" alt="Достигать баланс" class="cf-slide-img">
                     <div class="cf-slide-descr">Достигать баланса</div>
                   </div>
                 </div>
     
-                <div class="swiper-slide cf-swiper-slide" data-audio="./media/village.flac">
+                <div class="swiper-slide cf-swiper-slide">
                   <div class="cf-slide">
                     <img src="./images/cf/2_bike.jpg" alt="Держать себя в форме" class="cf-slide-img">
                     <div class="cf-slide-descr">Держать себя в&nbsp;форме</div>
                   </div>
                 </div>
     
-                <div class="swiper-slide cf-swiper-slide" data-audio="./media/leafs.mp3">
+                <div class="swiper-slide cf-swiper-slide">
                   <div class="cf-slide">
                     <img src="./images/cf/3_barbeque.jpg" alt="Дружить с соседями" class="cf-slide-img">
                     <div class="cf-slide-descr">Дружить с соседями</div>
@@ -539,7 +536,7 @@
                   </div>
                 </div>
 
-                <div class="swiper-slide cf-swiper-slide" data-audio="./media/leafs.mp3">
+                <div class="swiper-slide cf-swiper-slide">
                   <div class="cf-slide">
                     <img src="./images/cf/7_pet.jpg" alt="Радовать питомцев" class="cf-slide-img">
                     <div class="cf-slide-descr">Радовать питомцев</div>
@@ -583,7 +580,7 @@
         </a>
       </div>
 
-      <audio src="" class="screen-slider-audio"></audio>
+      <audio src="./media/main-audio.mp3" class="screen-slider-audio"></audio>
     </div><!--.slider-->
 
     <div class="screen screen-bottom">

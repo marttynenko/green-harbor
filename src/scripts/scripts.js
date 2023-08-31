@@ -350,22 +350,13 @@ const slider = initSlider()
 
 //воспроизводим аудио в карусели
 function initCarouselAudio () {
-  if (!document.querySelector('.screen-slider-volume') || !slider) return
   const audio = document.querySelector('.screen-slider-audio')
   const btn = document.querySelector('.screen-slider-volume')
 
+  if (!btn || !audio) return
+
   btn.addEventListener('click', (e) => {
     e.preventDefault()
-
-    const slideIndex = slider.realIndex
-    // console.log(slideIndex)
-    const slide = document.querySelector(`.cf-swiper-slide[aria-label^="${slideIndex + 1}"]`)
-    const src = slide.dataset.audio || null
-    if (!src) return
-
-    if (audio.getAttribute('src') !== src) {
-      audio.src = src
-    }
 
     if (audio.paused) {
       audio.play()
@@ -374,34 +365,6 @@ function initCarouselAudio () {
       audio.pause()
       btn.classList.remove('playing')
     }
-  })
-
-
-  slider.on('slideChange', (swiper) => {
-    const slideIndex = swiper.realIndex
-    const slide = document.querySelector(`.cf-swiper-slide[aria-label^="${slideIndex + 1}"]`)
-    const src = slide.dataset.audio || null
-
-    if (!src) {
-      audio.pause()
-      btn.classList.remove('playing')
-      btn.style.opacity = 0
-      return
-    } else {
-      btn.style.opacity = 1
-    }
-
-    if (audio.paused) {
-      audio.pause()
-      audio.currentTime = 0
-      btn.classList.remove('playing')
-    } else {
-      if (audio.getAttribute('src') !== src) {
-        audio.src = src
-      }
-      audio.play()
-    }
-    
   })
 }
 initCarouselAudio();
@@ -442,3 +405,13 @@ function initMask() {
   
 }
 initMask()
+
+
+(function(){
+  if (!document.querySelector('.header-phone-txt') || !document.querySelector('.screen-bottom')) return
+  const trg = document.querySelector('.header-phone-txt')
+  trg.addEventListener('click', (e) => {
+    e.preventDefault()
+    document.querySelector('.screen-bottom').scrollIntoView({behavior: 'smooth'})
+  })
+}())

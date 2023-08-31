@@ -456,8 +456,8 @@ header.header {
   margin-right: 40px;
   height: 48px;
   border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background-color: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(151, 151, 151, 0.2);
+  background-color: rgba(177, 177, 177, 0.2);
   line-height: 1;
   text-align: left;
   white-space: nowrap;
@@ -504,8 +504,8 @@ header.header {
   width: 48px;
   height: 48px;
   border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background-color: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(151, 151, 151, 0.2);
+  background-color: rgba(177, 177, 177, 0.2);
   -webkit-transition: border 0.3s, background-color 0.3s;
   transition: border 0.3s, background-color 0.3s;
 }
@@ -3244,12 +3244,12 @@ span.invalid {
     top: 5%;
     -webkit-transform: translateZ(160px);
             transform: translateZ(160px);
-    max-width: 30%;
+    max-width: 30% !important;
   }
   .layer-2-leafs {
     display: block;
-    left: -3%;
-    top: -3%;
+    left: -8%;
+    top: -8%;
     -webkit-transform: translateZ(240px);
             transform: translateZ(240px);
   }
@@ -3767,6 +3767,13 @@ span.invalid {
   z-index: -1;
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.85)), to(rgba(255, 255, 255, 0)));
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.85), rgba(255, 255, 255, 0));
+}
+@media (max-height: 760px) and (max-width: 1480px) {
+  .cf-slide-descr {
+    padding: 0px 30px 30px 30px;
+    font-size: 30px;
+    font-size: 1.875rem;
+  }
 }
 @media (max-width: 1366px) {
   .cf-slide-descr {
