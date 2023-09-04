@@ -629,6 +629,17 @@
                       phone: {
                         telephone: true
                       }
+                    },
+                    submitHandler: async function (form, event) {
+                      event.preventDefault()
+                      
+                      // const res = await fetch('url')
+                      // if (res.ok) {
+                      //   showSuccessPopup()
+                      // }
+
+                      //показываем модалку о успешной отправке формы
+                      showSuccessPopup()
                     }
                   })
                 }
@@ -699,6 +710,17 @@
     
 
   </div><!--.screens-->
+
+  <div class="popup-wrps">
+    <div class="popup-container">
+      <div class="popup popup-success">
+        <div class="popup-title">Ваше сообщение получено</div>
+        <div class="popup-close" onclick=""></div>
+      </div>
+    </div>
+    
+    <div class="popup-bg" onclick=""></div>
+  </div>
 </div>
 
 

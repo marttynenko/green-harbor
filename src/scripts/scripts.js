@@ -375,6 +375,10 @@ function initMask() {
   if (!inputs.length) return
 
   inputs.forEach(el => {
+    // el.addEventListener('focus',() => {
+    //   el.value = '+'
+    // })
+
     IMask(el, {
       mask: [
         {
@@ -390,13 +394,15 @@ function initMask() {
           country: 'Belarus'
         },
         {
-          mask: '0000000000000',
+          mask: '+0000000000000',
           startsWith: '',
           country: 'unknown'
         }
       ],
       dispatch: (appended, dynamicMasked) => {
         const number = (dynamicMasked.value + appended).replace(/\D/g,'');
+        // const number = (dynamicMasked.value + appended);
+        // console.log(dynamicMasked)
     
         return dynamicMasked.compiledMasks.find(m => number.indexOf(m.startsWith) === 0);
       }
@@ -404,14 +410,39 @@ function initMask() {
   })
   
 }
-initMask()
+initMask();
 
 
-(function(){
+;(function(){
   if (!document.querySelector('.header-phone-txt') || !document.querySelector('.screen-bottom')) return
   const trg = document.querySelector('.header-phone-txt')
   trg.addEventListener('click', (e) => {
     e.preventDefault()
     document.querySelector('.screen-bottom').scrollIntoView({behavior: 'smooth'})
+  })
+}())
+
+
+function showSuccessPopup() {
+  if (!document.querySelector('.popup-wrps')) return
+  document.querySelector('.popup-wrps').classList.add('opened')
+  document.documentElement.classList.add('non-overflow')
+}
+
+function closeSuccessPopup() {
+  document.querySelector('.popup-wrps').classList.remove('opened')
+  document.documentElement.classList.remove('non-overflow')
+}
+
+;(function(){
+  if (!document.querySelector('.popup-close')) return
+  document.querySelector('.popup-close').addEventListener('click', (e) => {
+    e.preventDefault();
+    closeSuccessPopup();
+  })
+
+  document.querySelector('.popup-bg').addEventListener('click', (e) => {
+    e.preventDefault();
+    closeSuccessPopup();
   })
 }())
