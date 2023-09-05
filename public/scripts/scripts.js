@@ -150,7 +150,12 @@ window.addEventListener('load', () => {
     animateScreenOne()
   },1)
 })
-
+setTimeout(()=> {
+  if (!document.documentElement.classList.contains('is-loaded')) {
+    document.documentElement.classList.add('is-loaded')
+    animateScreenOne()
+  }
+},10000)
 
 
 document.addEventListener('mousemove',(e) => {
@@ -401,9 +406,7 @@ function initMask() {
       ],
       dispatch: (appended, dynamicMasked) => {
         const number = (dynamicMasked.value + appended).replace(/\D/g,'');
-        // const number = (dynamicMasked.value + appended);
-        // console.log(dynamicMasked)
-    
+
         return dynamicMasked.compiledMasks.find(m => number.indexOf(m.startsWith) === 0);
       }
     })
